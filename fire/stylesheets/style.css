@@ -145,12 +145,59 @@ p {
   text-align: center;
 }
 
-body {
+body.page-home {
+  background: url("images/wall-home.jpg") #efe7e4;
+  -webkit-background-size: 500px 500px;
+  -moz-background-size: 500px 500px;
+  -o-background-size: 500px 500px;
+  background-size: 500px 500px;
+}
+body.page-home a.active, body.page-home a:hover {
+  color: #efe7e4;
+}
+
+body.page-about {
+  background: url("images/wall-about.jpg") #b2bc8e;
+  -webkit-background-size: 200px 300px;
+  -moz-background-size: 200px 300px;
+  -o-background-size: 200px 300px;
+  background-size: 200px 300px;
+}
+body.page-about a.active, body.page-about a:hover {
+  color: #b2bc8e;
+}
+
+body.page-private-party {
+  background: url("images/wall-private-party.jpg") #ccb4d6;
+  -webkit-background-size: 200px 300px;
+  -moz-background-size: 200px 300px;
+  -o-background-size: 200px 300px;
+  background-size: 200px 300px;
+}
+body.page-private-party a.active, body.page-private-party a:hover {
+  color: #ccb4d6;
+}
+
+body.page-info {
   background: url("images/wall-info.jpg") #afc4c7;
   -webkit-background-size: 200px 300px;
   -moz-background-size: 200px 300px;
   -o-background-size: 200px 300px;
   background-size: 200px 300px;
+}
+body.page-info a.active, body.page-info a:hover {
+  color: #afc4c7;
+}
+
+body.page-news {
+  background: url("images/wall-news.jpg") #dbb9b4;
+  -webkit-background-size: 200px 300px;
+  -moz-background-size: 200px 300px;
+  -o-background-size: 200px 300px;
+  background-size: 200px 300px;
+}
+body.page-news a.active, body.page-news a:hover {
+  color: #dbb9b4;
 }
 
 a {
@@ -160,9 +207,6 @@ a {
   -moz-transition: color 0.5s;
   -o-transition: color 0.5s;
   transition: color 0.5s;
-}
-a.active, a:hover {
-  color: #afc4c7;
 }
 
 #header {

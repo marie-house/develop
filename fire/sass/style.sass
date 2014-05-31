@@ -1,20 +1,27 @@
-@import "compass/reset"
-@import "compass/css3/transition"
-@import "compass/css3/background-size"
-@import "_layout"
-@import "_typography"
+@import compass/reset
+@import compass/css3/transition
+@import compass/css3/background-size
+@import _layout
+@import _typography
 
-$page-color: #afc4c7
+$page-colors: (("home", "#efe7e4", "500px 500px"), ("about" "#b2bc8e"), ("private-party" "#ccb4d6"), ("info" "#afc4c7"), ("news" "#dbb9b4"))
 
-body
-  background: url('images/wall-info.jpg') $page-color
-  +background-size(200px 300px)
+@each $pair in $page-colors
+  $page: nth($pair, 1)
+  $color: unquote(nth($pair, 2))
+  $size: 200px 300px
+  @if length($pair) == 3
+    $size: unquote(nth($pair, 3))
+  body.page-#{$page}
+    background: url('images/wall-#{$page}.jpg') $color
+    +background-size($size)
+    a
+      &.active, &:hover
+        color: $color
 a
   color: #826441
   text-decoration: none
   +transition( color .5s )
-  &.active, &:hover
-    color: $page-color
 
 #header
   background: rgba( #fff, .8 )
