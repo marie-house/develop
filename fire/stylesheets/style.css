@@ -89,7 +89,7 @@ html {
 }
 #header #menu a {
   display: block;
-  margin-left: 20px;
+  margin-left: 50px;
 }
 
 #sidebar {
@@ -240,6 +240,15 @@ a {
 #header {
   background: rgba(255, 255, 255, 0.8);
   text-transform: uppercase;
+}
+
+#menu a {
+  padding-left: 13px;
+  background: url("images/menu-key.png") left 15px no-repeat;
+  -webkit-background-size: 6px 12px;
+  -moz-background-size: 6px 12px;
+  -o-background-size: 6px 12px;
+  background-size: 6px 12px;
 }
 
 #content {
