@@ -10,11 +10,13 @@
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
   <header id="header" class="clearfix" role="banner">
-    <h1 id="site-title">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'mhouse' ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
-    </h1>
-    <nav id="menu" role="navigation">
-      <?php wp_nav_menu(); ?>
-    </nav>
+    <div class="container">
+      <h1 id="site-title">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'mhouse' ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
+      </h1>
+      <nav id="menu" role="navigation">
+        <?php wp_nav_menu(); ?>
+      </nav>
+    </div>
   </header>
-  <div id="container">
+  <div id="container" class="container">

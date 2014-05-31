@@ -1,8 +1,8 @@
-<aside id="sidebar" role="complementary">
+<aside id="sidebar" class="pull-left" role="complementary">
 <?php if( have_rows('paragraph') ): ?>
   <?php $cover = get_field('cover'); ?>
   <?php if( $cover ): ?>
-    <img src="<?php echo $cover['url'] ?>" width="<?php echo $cover['width']/2 ?>" height="<?php echo $cover['height']/2 ?>">
+    <img class="cover" src="<?php echo $cover['url'] ?>">
   <?php endif; ?>
   <ul>
     <?php while ( have_rows('paragraph') ) : the_row(); ?>

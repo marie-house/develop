@@ -23,7 +23,8 @@ PHP:
   [x] page @done (14-05-31 17:32)
   [ ] news
 CSS:
+  [ ] backgrounds
   [ ] home
-  [ ] layout
+  [x] layout @done (14-05-31 19:08)
   [ ] typography
   [ ] pages

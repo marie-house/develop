@@ -1,0 +1,68 @@
+#wpadminbar {
+  display: none;
+}
+
+html {
+  padding-top: 58px !important;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 50px;
+  position: relative;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45px;
+  line-height: 45px;
+}
+#header #site-title {
+  float: left;
+}
+#header #menu {
+  float: right;
+}
+#header #menu li {
+  display: inline-block;
+}
+#header #menu a {
+  display: block;
+  padding: 0 20px;
+}
+
+#sidebar {
+  min-width: 350px;
+  width: 15%;
+  margin-right: 2%;
+}
+#sidebar img {
+  width: 100%;
+  height: auto;
+}
+
+#content {
+  margin-left: 17%;
+  padding: 20px;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}

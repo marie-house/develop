@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php get_sidebar('page'); ?>
 <main id="content" role="main">
 <?php
 
@@ -14,6 +15,4 @@ if( have_rows('paragraph') ):
 endif;
 ?>
 </main>
-<?php get_sidebar('page'); ?>
 <?php get_footer(); ?>
-
