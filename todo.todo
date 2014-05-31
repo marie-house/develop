@@ -1,0 +1,29 @@
+Content:
+  News:
+    [ ] sub-category: announce | 最新消息
+    [ ] sub-category: event | 優惠資訊
+    [ ] sub-category: press | 相關新聞
+  About:
+    [x] cover @done (14-05-31 17:12)
+    [x] 源由／背景 @done (14-05-31 16:35)
+    [x] 環境介紹 @done (14-05-31 16:35)
+  Private party:
+    [x] cover @done (14-05-31 16:57)
+    [x] 費用說明 @done (14-05-31 17:11)
+    [x] 遊戲規則 @done (14-05-31 17:11)
+    [x] 適用場合 @done (14-05-31 17:11)
+    [x] 額外選項 @done (14-05-31 17:11)
+  Info:
+    [x] cover @done (14-05-31 17:31)
+    [x] 營業資訊 @done (14-05-31 17:31)
+    [ ] 地圖
+    [ ] 關係企業
+PHP:
+  [ ] home
+  [x] page @done (14-05-31 17:32)
+  [ ] news
+CSS:
+  [ ] home
+  [ ] layout
+  [ ] typography
+  [ ] pages
