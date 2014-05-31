@@ -76,6 +76,7 @@ html {
   right: 0;
   height: 45px;
   line-height: 45px;
+  z-index: 9;
 }
 #header #site-title {
   float: left;
@@ -88,7 +89,7 @@ html {
 }
 #header #menu a {
   display: block;
-  padding: 0 20px;
+  margin-left: 20px;
 }
 
 #sidebar {
@@ -102,9 +103,20 @@ html {
 
 #content {
   margin-left: 200px;
+  margin-bottom: 50px;
   position: relative;
   left: 2%;
   padding: 20px;
+  height: 550px;
+  overflow: auto;
+  border: 20px solid transparent;
+}
+#content article {
+  padding-top: 20px;
+  margin-bottom: 50px;
+}
+#content article .symbol {
+  margin-bottom: 10px;
 }
 
 .pull-left {
@@ -135,7 +147,7 @@ p {
 #header h1 {
   font-weight: bold;
   letter-spacing: 2px;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 #header nav a {
   font-size: 0.8em;
@@ -143,6 +155,22 @@ p {
 
 #content {
   text-align: center;
+  color: #826441;
+  font-weight: bold;
+}
+#content h2, #content strong {
+  font-size: 1.2em;
+  letter-spacing: 0.3em;
+}
+#content p {
+  font-size: 0.8em;
+  line-height: 1.8em;
+  letter-spacing: 0.1em;
+}
+#content strong {
+  font-size: 1.5em;
+  display: block;
+  margin-bottom: 10px;
 }
 
 body.page-home {
@@ -203,10 +231,10 @@ body.page-news a.active, body.page-news a:hover {
 a {
   color: #826441;
   text-decoration: none;
-  -webkit-transition: color 0.5s;
-  -moz-transition: color 0.5s;
-  -o-transition: color 0.5s;
-  transition: color 0.5s;
+  -webkit-transition: color 0.3s, background 0.5s;
+  -moz-transition: color 0.3s, background 0.5s;
+  -o-transition: color 0.3s, background 0.5s;
+  transition: color 0.3s, background 0.5s;
 }
 
 #header {
@@ -214,8 +242,16 @@ a {
   text-transform: uppercase;
 }
 
-main {
+#content {
   background: rgba(255, 255, 255, 0.8);
+}
+#content h2 {
+  background: url("images/title-about.png") center center no-repeat;
+  -webkit-background-size: 450px 47px;
+  -moz-background-size: 450px 47px;
+  -o-background-size: 450px 47px;
+  background-size: 450px 47px;
+  line-height: 47px;
 }
 
 #sidebar ul {
@@ -223,16 +259,23 @@ main {
 }
 #sidebar li {
   font-size: 0.8em;
-  padding-bottom: 15px;
-  padding-top: 18px;
+  padding: 12px 10px 12px 11px;
   text-align: center;
   margin-bottom: 10px;
-  background: url("images/side-item.png") 0 0 no-repeat;
-  -webkit-background-size: 100% 100%;
-  -moz-background-size: 100% 100%;
-  -o-background-size: 100% 100%;
-  background-size: 100% 100%;
+  background: url("images/side-hover-about-right.png") 90% center, url("images/side-hover-about-left.png") 10% center, url("images/side-item.png") 0 0;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  -webkit-background-size: 15px 19px, 15px 19px, 100% 100%;
+  -moz-background-size: 15px 19px, 15px 19px, 100% 100%;
+  -o-background-size: 15px 19px, 15px 19px, 100% 100%;
+  background-size: 15px 19px, 15px 19px, 100% 100%;
 }
 #sidebar a {
   font-weight: bold;
+  display: block;
+  background: white;
+  padding: 5px;
+  padding-top: 8px;
+}
+#sidebar a:hover {
+  background: transparent;
 }

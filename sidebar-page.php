@@ -7,7 +7,7 @@
   <ul>
     <?php while ( have_rows('paragraph') ) : the_row(); ?>
       <li>
-        <a href="#"><?php the_sub_field('title'); ?></a>
+        <a href="#<?php the_sub_field('slug'); ?>"><?php the_sub_field('title'); ?></a>
       </li>
     <?php endwhile; ?>
   </ul>

@@ -18,6 +18,7 @@ html
   right: 0
   height: 45px
   line-height: 45px
+  z-index: 9
   #site-title
     float: left
   #menu
@@ -26,7 +27,7 @@ html
       display: inline-block
     a
       display: block
-      padding: 0 20px
+      margin-left: 20px
 
 #sidebar
   min-width: 200px
@@ -37,9 +38,19 @@ html
 
 #content
   margin-left: 200px
+  margin-bottom: 50px
   position: relative
   left: 2%
   padding: 20px
+  height: 550px
+  overflow: auto
+  border: 20px solid transparent
+
+  article
+    padding-top: 20px
+    margin-bottom: 50px
+    .symbol
+      margin-bottom: 10px
 
 
 .pull-left
