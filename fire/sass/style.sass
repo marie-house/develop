@@ -1,25 +1,13 @@
-$page-colors: (("home", "#efe7e4", "500px 500px"), ("about" "#b2bc8e"), ("private-party" "#ccb4d6"), ("info" "#afc4c7"), ("news" "#dbb9b4"))
 $text-color: #826441
 
 @import compass/reset
 @import compass/css3/transition
 @import compass/css3/background-size
+@import _mixin
 @import _layout
 @import _typography
+@import _pair
 
-
-@each $pair in $page-colors
-  $page: nth($pair, 1)
-  $color: unquote(nth($pair, 2))
-  $size: 200px 300px
-  @if length($pair) == 3
-    $size: unquote(nth($pair, 3))
-  body.page-#{$page}
-    background: url('images/wall-#{$page}.jpg') $color
-    +background-size($size)
-    a
-      &.active, &:hover
-        color: $color
 a
   color: $text-color
   text-decoration: none
@@ -36,8 +24,6 @@ a
 #content
   background: rgba( #fff, .8 )
   h2
-    background: url('images/title-about.png') center center no-repeat
-    +background-size(450px 47px)
     line-height: 47px
 #sidebar
   ul
@@ -47,9 +33,14 @@ a
     padding: 12px 10px 12px 11px
     text-align: center
     margin-bottom: 10px
-    background: url('images/side-hover-about-right.png') 90% center, url('images/side-hover-about-left.png') 10% center, url('images/side-item.png') 0 0
-    background-repeat: no-repeat, no-repeat, no-repeat
-    +background-size(15px 19px, 15px 19px, 100% 100%)
+    position: relative
+    &::before
+      width: 100%
+      height: 100%
+      background: url('images/side-item.png') 0 0
+      z-index: -1
+      +ninja( true )
+      +background-size( 100% 100% )
   a
     font-weight: bold
     display: block
@@ -58,3 +49,10 @@ a
     padding-top: 8px
     &:hover
       background: transparent
+
+
+.page-info
+  .brading-info
+    margin: 10px 0
+  .symbol-info-2
+    margin: 10px 0

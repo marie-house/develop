@@ -166,11 +166,13 @@ p {
   font-size: 0.8em;
   line-height: 1.8em;
   letter-spacing: 0.1em;
+  font-weight: normal;
 }
 #content strong {
   font-size: 1.5em;
   display: block;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 body.page-home {
@@ -183,6 +185,21 @@ body.page-home {
 body.page-home a.active, body.page-home a:hover {
   color: #efe7e4;
 }
+body.page-home #content h2 {
+  background: url("images/title-home.png") center center no-repeat;
+  -webkit-background-size: 450px 47px;
+  -moz-background-size: 450px 47px;
+  -o-background-size: 450px 47px;
+  background-size: 450px 47px;
+}
+body.page-home #sidebar li {
+  background: url("images/side-hover-home-right.png") 90% center, url("images/side-hover-home-left.png") 10% center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 15px 19px, 15px 19px;
+  -moz-background-size: 15px 19px, 15px 19px;
+  -o-background-size: 15px 19px, 15px 19px;
+  background-size: 15px 19px, 15px 19px;
+}
 
 body.page-about {
   background: url("images/wall-about.jpg") #b2bc8e;
@@ -193,6 +210,21 @@ body.page-about {
 }
 body.page-about a.active, body.page-about a:hover {
   color: #b2bc8e;
+}
+body.page-about #content h2 {
+  background: url("images/title-about.png") center center no-repeat;
+  -webkit-background-size: 450px 47px;
+  -moz-background-size: 450px 47px;
+  -o-background-size: 450px 47px;
+  background-size: 450px 47px;
+}
+body.page-about #sidebar li {
+  background: url("images/side-hover-about-right.png") 90% center, url("images/side-hover-about-left.png") 10% center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 15px 19px, 15px 19px;
+  -moz-background-size: 15px 19px, 15px 19px;
+  -o-background-size: 15px 19px, 15px 19px;
+  background-size: 15px 19px, 15px 19px;
 }
 
 body.page-private-party {
@@ -205,6 +237,21 @@ body.page-private-party {
 body.page-private-party a.active, body.page-private-party a:hover {
   color: #ccb4d6;
 }
+body.page-private-party #content h2 {
+  background: url("images/title-private-party.png") center center no-repeat;
+  -webkit-background-size: 450px 47px;
+  -moz-background-size: 450px 47px;
+  -o-background-size: 450px 47px;
+  background-size: 450px 47px;
+}
+body.page-private-party #sidebar li {
+  background: url("images/side-hover-private-party-right.png") 90% center, url("images/side-hover-private-party-left.png") 10% center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 15px 19px, 15px 19px;
+  -moz-background-size: 15px 19px, 15px 19px;
+  -o-background-size: 15px 19px, 15px 19px;
+  background-size: 15px 19px, 15px 19px;
+}
 
 body.page-info {
   background: url("images/wall-info.jpg") #afc4c7;
@@ -216,6 +263,21 @@ body.page-info {
 body.page-info a.active, body.page-info a:hover {
   color: #afc4c7;
 }
+body.page-info #content h2 {
+  background: url("images/title-info.png") center center no-repeat;
+  -webkit-background-size: 450px 47px;
+  -moz-background-size: 450px 47px;
+  -o-background-size: 450px 47px;
+  background-size: 450px 47px;
+}
+body.page-info #sidebar li {
+  background: url("images/side-hover-info-right.png") 90% center, url("images/side-hover-info-left.png") 10% center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 15px 19px, 15px 19px;
+  -moz-background-size: 15px 19px, 15px 19px;
+  -o-background-size: 15px 19px, 15px 19px;
+  background-size: 15px 19px, 15px 19px;
+}
 
 body.page-news {
   background: url("images/wall-news.jpg") #dbb9b4;
@@ -226,6 +288,21 @@ body.page-news {
 }
 body.page-news a.active, body.page-news a:hover {
   color: #dbb9b4;
+}
+body.page-news #content h2 {
+  background: url("images/title-news.png") center center no-repeat;
+  -webkit-background-size: 450px 47px;
+  -moz-background-size: 450px 47px;
+  -o-background-size: 450px 47px;
+  background-size: 450px 47px;
+}
+body.page-news #sidebar li {
+  background: url("images/side-hover-news-right.png") 90% center, url("images/side-hover-news-left.png") 10% center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 15px 19px, 15px 19px;
+  -moz-background-size: 15px 19px, 15px 19px;
+  -o-background-size: 15px 19px, 15px 19px;
+  background-size: 15px 19px, 15px 19px;
 }
 
 a {
@@ -255,11 +332,6 @@ a {
   background: rgba(255, 255, 255, 0.8);
 }
 #content h2 {
-  background: url("images/title-about.png") center center no-repeat;
-  -webkit-background-size: 450px 47px;
-  -moz-background-size: 450px 47px;
-  -o-background-size: 450px 47px;
-  background-size: 450px 47px;
   line-height: 47px;
 }
 
@@ -271,12 +343,22 @@ a {
   padding: 12px 10px 12px 11px;
   text-align: center;
   margin-bottom: 10px;
-  background: url("images/side-hover-about-right.png") 90% center, url("images/side-hover-about-left.png") 10% center, url("images/side-item.png") 0 0;
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  -webkit-background-size: 15px 19px, 15px 19px, 100% 100%;
-  -moz-background-size: 15px 19px, 15px 19px, 100% 100%;
-  -o-background-size: 15px 19px, 15px 19px, 100% 100%;
-  background-size: 15px 19px, 15px 19px, 100% 100%;
+  position: relative;
+}
+#sidebar li::before {
+  width: 100%;
+  height: 100%;
+  background: url("images/side-item.png") 0 0;
+  z-index: -1;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
 }
 #sidebar a {
   font-weight: bold;
@@ -287,4 +369,11 @@ a {
 }
 #sidebar a:hover {
   background: transparent;
+}
+
+.page-info .brading-info {
+  margin: 10px 0;
+}
+.page-info .symbol-info-2 {
+  margin: 10px 0;
 }

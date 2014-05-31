@@ -1,0 +1,27 @@
+$pages     : "home",    "about",   "private-party", "info",    "news"
+$bg-colors : "#efe7e4", "#b2bc8e", "#ccb4d6",       "#afc4c7", "#dbb9b4"
+
+@for $i from 1 through length($pages)
+  $page: nth( $pages, $i )
+  $bg-color: unquote( nth( $bg-colors, $i) )
+  $bg-size: 200px 300px
+
+  @if $page == "home"
+    $bg-size: 500px 500px
+
+  body.page-#{$page}
+    background: url('images/wall-#{$page}.jpg') $bg-color
+    +background-size($bg-size)
+
+    a
+      &.active, &:hover
+        color: $bg-color
+    #content
+      h2
+        background: url('images/title-#{$page}.png') center center no-repeat
+        +background-size(450px 47px)
+    #sidebar
+      li
+        background: url('images/side-hover-#{$page}-right.png') 90% center, url('images/side-hover-#{$page}-left.png') 10% center
+        background-repeat: no-repeat
+        +background-size(15px 19px, 15px 19px)
