@@ -1,0 +1,23 @@
+%fix-blur
+  +transform( translateZ(0) )
+
+.shadow
+  @extend %fix-blur
+  +filter( drop-shadow(1px 2px 1px #000) )
+.shadow-light
+  @extend %fix-blur
+  +filter( drop-shadow(1px 2px 1px rgba(#000, .7)) )
+img
+  @extend %fix-blur
+a
+  color: $text-color
+  text-decoration: none
+
+.pull-left
+  float: left
+
+.pull-right
+  float: right
+
+.clearfix
+  +pie-clearfix

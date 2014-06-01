@@ -1,36 +1,51 @@
 $text-color: #826441
 
-@import compass/reset
-@import compass/css3/transition
-@import compass/css3/background-size
 @import _mixin
 @import _layout
 @import _typography
 @import _pair
-
-a
-  color: $text-color
-  text-decoration: none
-  +transition( color .3s, background .5s )
+@import _global
 
 #header
   background: rgba( #fff, .8 )
   text-transform: uppercase
+  h1
+    a
+      +hide-text
+      display: block
+      background: url('images/logo.svg') left center no-repeat
+      width: 335px * 1.5
+      height: 22px * 2
+
 #menu
   a
     padding-left: 13px
     background: url('images/menu-key.png') left 15px no-repeat
     +background-size(6px 12px)
+    &:hover
+      color: $text-color
+#container
+  a
+    +transition( color .3s, background .5s )
 #content
   background: rgba( #fff, .8 )
   h2
     line-height: 47px
+  .post
+    .entry-date
+      display: block
+      margin-bottom: 10px
+    h3
+      font-size: 1.1em
+      margin-bottom: 30px
+    img
+      margin: 5px
 #sidebar
   ul
     margin: 50px 10px
   li
     font-size: .8em
-    padding: 12px 10px 12px 11px
+    padding: 13px 10px 12px 11px
     text-align: center
     margin-bottom: 10px
     position: relative
@@ -46,7 +61,7 @@ a
     display: block
     background: #fff
     padding: 5px
-    padding-top: 8px
+    padding-top: 7px
     &:hover
       background: transparent
 
@@ -56,3 +71,10 @@ a
     margin: 10px 0
   .symbol-info-2
     margin: 10px 0
+
+.page-home
+  .frames
+    text-align: center
+  .frame
+    margin-right: 30px
+    margin-bottom: 30px

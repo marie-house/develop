@@ -1,3 +1,10 @@
+@import compass/reset
+@import compass/css3/transform
+@import compass/css3/transition
+@import compass/css3/background-size
+@import compass/css3/filter
+@import compass/utilities/text/replacement
+
 =ninja( $absolute: false )
   content: ''
   display: block
@@ -5,3 +12,52 @@
     position: absolute
     top: 0
     left: 0
+
+=between($min, $max)
+  @media (min-width: $min) and (max-width: $max)
+    @content
+
+$desktop: 1280px
+$mobile: 480px
+
+=mq($mq)
+  @if $mq == "retina"
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and ( min-moz-device-pixel-ratio: 2), only screen and ( -o-min-device-pixel-ratio: 2/1), only screen and ( min-device-pixel-ratio: 2), only screen and ( min-resolution: 192dpi), only screen and ( min-resolution: 2dppx)
+      @content
+  @else
+    @if $mq == "desktop"
+      @media (min-width: $desktop)
+        @content
+    @else if $mq == "mobile"
+      @media (max-width: $mobile)
+        @content
+    @else if $mq == "pad"
+      +between( $mobile, $desktop)
+        @content
+    @else if $mq == "notsmall"
+      @media (min-width: $mobile)
+        @content
+    @else if $mq == "notlarge"
+      @media (max-width: $desktop)
+        @content
+    @else
+      @media (max-width: $mq+"px")
+        @content
+=retina
+  +mq("retina")
+    @content
+=mb
+  +mq("mobile")
+    @content
+=pad
+  +mq("pad")
+    @content
+=dt
+  +mq("desktop")
+    @content
+=ns
+  +mq("notsmall")
+    @content
+=nl
+  +mq("notlarge")
+    @content

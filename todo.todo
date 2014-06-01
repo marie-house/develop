@@ -1,8 +1,16 @@
 Content:
+  Home:
+    [x] frames @done (14-06-01 23:57)
+    [x] background @done (14-06-01 23:15)
   News:
-    [ ] sub-category: announce | 最新消息
-    [ ] sub-category: event | 優惠資訊
-    [ ] sub-category: press | 相關新聞
+    [x] sub-category: announce | 最新消息 @done (14-06-01 23:15)
+    [x] sub-category: event | 優惠資訊 @done (14-06-01 23:15)
+    [x] sub-category: press | 相關新聞 @done (14-06-01 23:15)
+    [x] cover @done (14-06-01 19:55)
+    [x] background @done (14-06-01 19:55)
+    [x] title image @done (14-06-01 19:55)
+    [x] side link image @done (14-06-01 19:57)
+    [x] symbols @done (14-06-01 23:15)
   About:
     [x] cover @done (14-05-31 17:12)
     [x] 源由／背景 @done (14-05-31 16:35)
@@ -17,10 +25,10 @@ Content:
     [x] 遊戲規則 @done (14-05-31 17:11)
     [x] 適用場合 @done (14-05-31 17:11)
     [x] 額外選項 @done (14-05-31 17:11)
-    [ ] backgrounds
-    [ ] title image
-    [ ] side links image
-    [ ] symbols
+    [ ] background
+    [x] title image @done (14-06-01 00:47)
+    [x] side links image @done (14-06-01 00:47)
+    [x] symbols @done (14-06-01 11:07)
   Info:
     [x] cover @done (14-05-31 17:31)
     [x] 營業資訊 @done (14-05-31 17:31)
@@ -30,10 +38,16 @@ Content:
     [x] title image @done (14-06-01 00:16)
     [x] side links image @done (14-06-01 00:16)
     [x] symbols @done (14-06-01 00:32)
+  food:
+    [ ] background
+    [ ] cover
+    [ ] title image
+    [ ] side link image
+    [ ] symbols
 PHP:
   [ ] home
   [x] page @done (14-05-31 17:32)
-  [ ] news
+  [x] news @done (14-06-01 23:57)
 CSS:
   Common:
     [x] backgrounds @done (14-05-31 20:45)

@@ -1,12 +1,12 @@
 <aside id="sidebar" class="pull-left" role="complementary">
+<?php $cover = get_field('cover'); ?>
+<?php if( $cover ): ?>
+  <img class="shadow-light cover" src="<?php echo $cover['url'] ?>">
+<?php endif; ?>
 <?php if( have_rows('paragraph') ): ?>
-  <?php $cover = get_field('cover'); ?>
-  <?php if( $cover ): ?>
-    <img class="cover" src="<?php echo $cover['url'] ?>">
-  <?php endif; ?>
   <ul>
     <?php while ( have_rows('paragraph') ) : the_row(); ?>
-      <li>
+      <li class="shadow-light">
         <a href="#<?php the_sub_field('slug'); ?>"><?php the_sub_field('title'); ?></a>
       </li>
     <?php endwhile; ?>
