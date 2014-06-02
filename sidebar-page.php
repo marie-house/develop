@@ -10,6 +10,16 @@
         <a href="#<?php the_sub_field('slug'); ?>"><?php the_sub_field('title'); ?></a>
       </li>
     <?php endwhile; ?>
+    <?php if( get_field('map') ): ?>
+      <li class="shadow-light">
+        <a href="#map">地圖</a>
+      </li>
+    <?php endif; ?>
+    <?php if( get_field('group') ): ?>
+      <li class="shadow-light">
+        <a href="#group">關係企業</a>
+      </li>
+    <?php endif; ?>
   </ul>
 <?php endif; ?>
 </aside>

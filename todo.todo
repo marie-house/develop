@@ -1,43 +1,10 @@
 Content:
   Home:
-    [x] frames @done (14-06-01 23:57)
-    [x] background @done (14-06-01 23:15)
   News:
-    [x] sub-category: announce | 最新消息 @done (14-06-01 23:15)
-    [x] sub-category: event | 優惠資訊 @done (14-06-01 23:15)
-    [x] sub-category: press | 相關新聞 @done (14-06-01 23:15)
-    [x] cover @done (14-06-01 19:55)
-    [x] background @done (14-06-01 19:55)
-    [x] title image @done (14-06-01 19:55)
-    [x] side link image @done (14-06-01 19:57)
-    [x] symbols @done (14-06-01 23:15)
   About:
-    [x] cover @done (14-05-31 17:12)
-    [x] 源由／背景 @done (14-05-31 16:35)
-    [x] 環境介紹 @done (14-05-31 16:35)
-    [x] backgrounds @done (14-05-31 23:24)
-    [x] title image @done (14-05-31 23:24)
-    [x] side links image @done (14-05-31 23:25)
-    [x] symbols @done (14-05-31 23:25)
   Private party:
-    [x] cover @done (14-05-31 16:57)
-    [x] 費用說明 @done (14-05-31 17:11)
-    [x] 遊戲規則 @done (14-05-31 17:11)
-    [x] 適用場合 @done (14-05-31 17:11)
-    [x] 額外選項 @done (14-05-31 17:11)
     [ ] background
-    [x] title image @done (14-06-01 00:47)
-    [x] side links image @done (14-06-01 00:47)
-    [x] symbols @done (14-06-01 11:07)
   Info:
-    [x] cover @done (14-05-31 17:31)
-    [x] 營業資訊 @done (14-05-31 17:31)
-    [x] backgrounds @done (14-05-31 23:24)
-    [ ] 地圖
-    [ ] 關係企業
-    [x] title image @done (14-06-01 00:16)
-    [x] side links image @done (14-06-01 00:16)
-    [x] symbols @done (14-06-01 00:32)
   food:
     [ ] background
     [ ] cover
@@ -46,13 +13,52 @@ Content:
     [ ] symbols
 PHP:
   [ ] home
-  [x] page @done (14-05-31 17:32)
-  [x] news @done (14-06-01 23:57)
+Javascript:
+  [ ] map style
 CSS:
   Common:
-    [x] backgrounds @done (14-05-31 20:45)
-    [x] layout @done (14-05-31 19:08)
     [ ] typography
   Pages:
     [ ] home
-    [x] about @done (14-05-31 20:45)
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ [x] frames @done (14-06-01 23:57) @project(Content / Home)
+ [x] background @done (14-06-01 23:15) @project(Content / Home)
+ [x] sub-category: announce | 最新消息 @done (14-06-01 23:15) @project(Content / News)
+ [x] sub-category: event | 優惠資訊 @done (14-06-01 23:15) @project(Content / News)
+ [x] sub-category: press | 相關新聞 @done (14-06-01 23:15) @project(Content / News)
+ [x] cover @done (14-06-01 19:55) @project(Content / News)
+ [x] background @done (14-06-01 19:55) @project(Content / News)
+ [x] title image @done (14-06-01 19:55) @project(Content / News)
+ [x] side link image @done (14-06-01 19:57) @project(Content / News)
+ [x] symbols @done (14-06-01 23:15) @project(Content / News)
+ [x] cover @done (14-05-31 17:12) @project(Content / About)
+ [x] 源由／背景 @done (14-05-31 16:35) @project(Content / About)
+ [x] 環境介紹 @done (14-05-31 16:35) @project(Content / About)
+ [x] backgrounds @done (14-05-31 23:24) @project(Content / About)
+ [x] title image @done (14-05-31 23:24) @project(Content / About)
+ [x] side links image @done (14-05-31 23:25) @project(Content / About)
+ [x] symbols @done (14-05-31 23:25) @project(Content / About)
+ [x] cover @done (14-05-31 16:57) @project(Content / Private party)
+ [x] 費用說明 @done (14-05-31 17:11) @project(Content / Private party)
+ [x] 遊戲規則 @done (14-05-31 17:11) @project(Content / Private party)
+ [x] 適用場合 @done (14-05-31 17:11) @project(Content / Private party)
+ [x] 額外選項 @done (14-05-31 17:11) @project(Content / Private party)
+ [x] title image @done (14-06-01 00:47) @project(Content / Private party)
+ [x] side links image @done (14-06-01 00:47) @project(Content / Private party)
+ [x] symbols @done (14-06-01 11:07) @project(Content / Private party)
+ [x] cover @done (14-05-31 17:31) @project(Content / Info)
+ [x] 營業資訊 @done (14-05-31 17:31) @project(Content / Info)
+ [x] backgrounds @done (14-05-31 23:24) @project(Content / Info)
+ [x] map @done (14-06-02 09:52) @project(Content / Info)
+ [x] 關係企業 @done (14-06-02 10:45) @project(Content / Info)
+ [x] title image @done (14-06-01 00:16) @project(Content / Info)
+ [x] side links image @done (14-06-01 00:16) @project(Content / Info)
+ [x] symbols @done (14-06-01 00:32) @project(Content / Info)
+ [x] page @done (14-05-31 17:32) @project(PHP)
+ [x] news @done (14-06-01 23:57) @project(PHP)
+ [x] map @done (14-06-02 09:52) @project(Javascript)
+ [x] backgrounds @done (14-05-31 20:45) @project(CSS / Common)
+ [x] layout @done (14-05-31 19:08) @project(CSS / Common)
+ [x] about @done (14-05-31 20:45) @project(CSS / Pages)
