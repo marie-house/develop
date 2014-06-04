@@ -10,10 +10,10 @@ if( have_rows('frames') ):
   if( $link):
 ?>
 <a class="frame" id="frame-<?php echo $slug ?>" href="<?php echo $link ?>">
-  <img class="shadow" src="<?php echo $cover['url'] ?>" width="<?php echo $cover['width']/2.2 ?>" height="<?php echo $cover['height']/2.2 ?>">
+  <img src="<?php echo $cover['url'] ?>" width="<?php echo $cover['width']/2.2 ?>" height="<?php echo $cover['height']/2.2 ?>">
 </a>
 <?php else: ?>
-  <img class="shadow frame frame-deco" id="frame-<?php echo $slug ?>" src="<?php echo $cover['url'] ?>" width="<?php echo $cover['width']/2.2 ?>" height="<?php echo $cover['height']/2.2 ?>">
+  <img class="frame frame-deco" id="frame-<?php echo $slug ?>" src="<?php echo $cover['url'] ?>" width="<?php echo $cover['width']/2.2 ?>" height="<?php echo $cover['height']/2.2 ?>">
 <?php
     endif;
   endwhile;

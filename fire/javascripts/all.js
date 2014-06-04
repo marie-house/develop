@@ -1,7 +1,20 @@
 (function() {
 
   (function($) {
-    var add_marker, center_map, render_map;
+    var add_marker, center_map, map_style, render_map;
+    map_style = [
+      {
+        "stylers": [
+          {
+            "saturation": -33
+          }, {
+            "hue": "#ff0000"
+          }, {
+            "gamma": 1.37
+          }
+        ]
+      }
+    ];
     render_map = function($el) {
       var $markers, args, map;
       $markers = $el.find('.marker');
@@ -10,7 +23,8 @@
         center: new google.maps.LatLng(0, 0),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         scrollwheel: false,
-        disableDoubleClickZoom: true
+        disableDoubleClickZoom: true,
+        styles: map_style
       };
       map = new google.maps.Map($el[0], args);
       map.markers = [];

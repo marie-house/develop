@@ -18,6 +18,8 @@ $bg-colors : "#efe7e4", "#b2bc8e", "#ccb4d6",       "#afc4c7", "#dbb9b4"
 
   @if $page == "home"
     $bg-size: 500px 500px
+  @if $page == "private-party"
+    $bg-size: 500px 692px
 
   +select( "#{$page}" )
     background: url('images/wall-#{$page}.jpg') $bg-color

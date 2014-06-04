@@ -4,7 +4,7 @@
   $cover = get_field('cover', $page[0]->ID);
 ?>
 <?php if( $cover ): ?>
-  <img class="shadow cover" src="<?php echo $cover['url'] ?>">
+  <img class="cover" src="<?php echo $cover['url'] ?>">
 <?php endif; ?>
 <ul>
   <?php

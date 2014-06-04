@@ -1,4 +1,12 @@
 (($) ->
+  map_style = [
+      "stylers": [
+        { "saturation": -33 }
+        { "hue": "#ff0000" }
+        { "gamma": 1.37 }
+      ]
+  ]
+
   render_map = ( $el ) ->
     $markers = $el.find('.marker')
 
@@ -8,6 +16,7 @@
       mapTypeId              : google.maps.MapTypeId.ROADMAP
       scrollwheel            : false
       disableDoubleClickZoom : true
+      styles                 : map_style
 
     map = new google.maps.Map($el[0], args)
 
@@ -26,7 +35,7 @@
 
     if $marker.html()
       infowindow = new google.maps.InfoWindow
-        content   : $marker.html()
+        content: $marker.html()
 
       google.maps.event.addListener(marker, 'click', -> infowindow.open( map, marker ))
 
