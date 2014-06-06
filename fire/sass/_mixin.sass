@@ -14,36 +14,39 @@
     top: 0
     left: 0
 
-=between($min, $max)
-  @media (min-width: $min) and (max-width: $max)
+$mobile: 480px
+$tablet: 1024px
+
+=min( $min )
+  @media (min-width: $min + 1)
     @content
 
-$desktop: 1280px
-$mobile: 480px
+=max( $max )
+  @media (max-width: $max)
+    @content
 
-=mq($mq)
-  @if $mq == "retina"
+=between( $min, $max )
+  @media (min-width: $min + 1) and (max-width: $max)
+    @content
+
+=mq($device)
+  @if $device == "retina"
     @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and ( min-moz-device-pixel-ratio: 2), only screen and ( -o-min-device-pixel-ratio: 2/1), only screen and ( min-device-pixel-ratio: 2), only screen and ( min-resolution: 192dpi), only screen and ( min-resolution: 2dppx)
       @content
   @else
-    @if $mq == "desktop"
-      @media (min-width: $desktop)
+    @if $device == "mobile"
+      +max($mobile)
         @content
-    @else if $mq == "mobile"
-      @media (max-width: $mobile)
+    @else if $device == "desktop"
+      +min($tablet)
         @content
-    @else if $mq == "pad"
-      +between( $mobile, $desktop)
+    @else if $device == "not-mobile"
+      +min($mobile)
         @content
-    @else if $mq == "notsmall"
-      @media (min-width: $mobile)
+    @else if $device == "tablet"
+      +between($mobile, $tablet)
         @content
-    @else if $mq == "notlarge"
-      @media (max-width: $desktop)
-        @content
-    @else
-      @media (max-width: $mq+"px")
-        @content
+
 =retina
   +mq("retina")
     @content
@@ -51,14 +54,29 @@ $mobile: 480px
   +mq("mobile")
     @content
 =pad
-  +mq("pad")
+  +mq("tablet")
     @content
 =dt
   +mq("desktop")
     @content
 =ns
-  +mq("notsmall")
+  +mq("not-mobile")
     @content
-=nl
-  +mq("notlarge")
-    @content
+
+
+  // @else
+  //   @if $mq == "desktop"
+  //     @media (min-width: $desktop)
+  //       @content
+  //   @else if $mq == "mobile"
+  //     @media (max-width: $mobile)
+  //       @content
+  //   @else if $mq == "pad"
+  //     +between( $mobile, $desktop)
+  //       @content
+  //   @else if $mq == "notsmall"
+  //     @media (min-width: $mobile)
+  //       @content
+  //   @else if $mq == "notlarge"
+  //     @media (max-width: $desktop)
+  //       @content
