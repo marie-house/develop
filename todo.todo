@@ -1,18 +1,21 @@
 Content:
   Private party:
   food:
-    [ ] background
-    [ ] cover
-    [ ] title image
-    [ ] side link image
-    [ ] symbols
 Javascript:
   [ ] window resize
 CSS:
   Pages:
+PHP:
+  food:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ [x] background @done (14-06-10 00:54) @project(Content / food)
+ [x] cover @done (14-06-10 00:54) @project(Content / food)
+ [x] title image @done (14-06-10 00:54) @project(Content / food)
+ [x] side link image @done (14-06-11 01:18) @project(Content / food)
+ [x] symbols @done (14-06-10 00:54) @project(Content / food)
+ [x] 餐點特色 @done (14-06-10 00:54) @project(PHP / food)
  [x] home @done (14-06-05 00:18) @project(CSS / Pages)
  [x] map style @done (14-06-05 00:18) @project(Javascript)
  [x] background @done (14-06-05 00:18) @project(Content / Private party)

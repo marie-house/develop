@@ -59,20 +59,70 @@ $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
     position: relative
   #group
     $width: 180px
-    $height: 180px * 160 / 445
+    $height: $width * 160 / 445
     ul
       margin-top: 30px
-      li
-        width: $width
-        display: inline-block
+    li
+      width: $width
+      margin: 0 auto
+      margin-bottom: 40px
+      position: relative
+      &::after
+        +ninja
+        position: absolute
+        bottom: -20px
+        left: -50px
+        right: -50px
+        border-bottom: 1px dotted #afc4c7
+      +ns
         margin: 0 10px
-        img
-          margin-bottom: 20px
-        a
-          display: inline-block
-          background: url('images/group-item.png') 0 0 no-repeat
-          width: $width
-          height: $height - 15px
-          line-height: 1.2em
-          padding-top: 15px
-          +background-size( $width $height )
+        display: inline-block
+        &::after
+          display: none
+      img
+        margin-bottom: 20px
+      a
+        display: inline-block
+        background: url('images/group-item.png') 0 0 no-repeat
+        line-height: 1.2em
+        padding-top: 15px
+        width: $width
+        height: $height - 15px
+        +background-size( $width $height )
+
+.page-food
+  #features
+    h3
+      margin-top: 20px
+  .meterials-list
+    margin-bottom: 80px
+    sub
+      font-size: .6em
+      margin: 10px
+      display: block
+    img
+      margin: 10px
+    li
+      margin-top: 80px
+
+.page-about
+  #history
+    strong
+      margin-top: 50px
+      +ns
+        margin-top: 0
+
+.page-news, .page-about, .page-food
+  img
+    display: block
+  p
+    display: inline
+    br
+      display: none
+  +ns
+    p
+      display: block
+      br
+        display: block
+
+

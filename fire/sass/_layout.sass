@@ -1,14 +1,18 @@
 #wpadminbar
   display: none
 html
-  padding-top: 60px - 32 + 60 !important
+  padding-top: 60px - 32 !important
+  +ns
+    padding-top: 60px - 32 + 60 !important
 
 .container, .frames
   // width: 1280px
   margin: 0 auto
   position: relative
 .container
-  padding: 0 50px
+  padding: 0 20px
+  +ns
+    padding: 0 50px
 
 #header
   position: fixed
@@ -21,29 +25,36 @@ html
   #site-title
     float: left
   #menu
-    float: right
-    li
-      display: inline-block
-    a
+    display: none
+    +ns
       display: block
-      margin-left: 50px
+      float: right
+      li
+        display: inline-block
+      a
+        display: block
+        margin-left: 50px
 
 #sidebar
-  min-width: 200px
-  width: 15%
-  img
-    width: 100%
-    height: auto
+  display: none
+  +ns
+    display: block
+    min-width: 200px
+    width: 15%
+    img
+      width: 100%
+      height: auto
 
 #content
-  margin-left: 200px
-  margin-bottom: 50px
   position: relative
-  left: 2%
-  padding: 20px
-  height: 550px
   overflow: auto
-  border: 20px solid transparent
+  padding: 20px
+  +ns
+    border: 20px solid transparent
+    margin-left: 200px
+    margin-bottom: 50px
+    left: 2%
+    height: 550px
 
   article
     padding-top: 20px

@@ -1,5 +1,5 @@
-$pages     : "home",    "about",   "private-party", "info",    "news"
-$bg-colors : "#efe7e4", "#b2bc8e", "#ccb4d6",       "#afc4c7", "#dbb9b4"
+$pages     : "home",   "about",  "private-party", "info",   "news",   "food"
+$bg-colors : "efe7e4", "b2bc8e", "ccb4d6",        "afc4c7", "dbb9b4", "e7d9b8"
 
 
 
@@ -20,14 +20,16 @@ $bg-colors : "#efe7e4", "#b2bc8e", "#ccb4d6",       "#afc4c7", "#dbb9b4"
     $bg-size: 500px 500px
   @if $page == "private-party"
     $bg-size: 500px 692px
+  @if $page == "food"
+    $bg-size: 239px 347px
 
   +select( "#{$page}" )
-    background: url('images/wall-#{$page}.jpg') $bg-color
+    background: url('images/wall-#{$page}.jpg') unquote("##{$bg-color}")
     +background-size($bg-size)
 
     a
       &.active, &:hover
-        color: $bg-color
+        color: unquote("#{$bg-color}")
     #content
       h2
         background: url('images/title-#{$page}.png') center center no-repeat
