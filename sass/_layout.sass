@@ -1,12 +1,11 @@
 #wpadminbar
   display: none
 html
-  padding-top: 60px - 32 !important
+  padding-top: 70px !important
   +ns
     padding-top: 60px - 32 + 60 !important
 
 .container, .frames
-  // width: 1280px
   margin: 0 auto
   position: relative
 .container
@@ -41,8 +40,10 @@ html
     top: -99999px
     &:checked
       + #menu
-        height: 300px
+        margin-top: 30px
+        height: 500px
         +dt
+          margin-top: 0
           height: auto
         +transform(rotateX(0))
 

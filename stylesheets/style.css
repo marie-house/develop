@@ -59,7 +59,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 html {
-  padding-top: 28px !important;
+  padding-top: 70px !important;
 }
 @media (min-width: 601px) {
   html {
@@ -112,7 +112,8 @@ html {
   top: -99999px;
 }
 #header #menu-toggler:checked + #menu {
-  height: 300px;
+  margin-top: 30px;
+  height: 500px;
   -webkit-transform: rotateX(0);
   -moz-transform: rotateX(0);
   -ms-transform: rotateX(0);
@@ -121,6 +122,7 @@ html {
 }
 @media (min-width: 1281px) {
   #header #menu-toggler:checked + #menu {
+    margin-top: 0;
     height: auto;
   }
 }
@@ -422,6 +424,7 @@ img {
 a {
   color: #826441;
   text-decoration: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
 .pull-left {
@@ -731,91 +734,91 @@ a {
 }
 @media (max-width: 580px) {
   #frame-1 {
-    -webkit-transform: translate(50px, 781px);
-    -moz-transform: translate(50px, 781px);
-    -ms-transform: translate(50px, 781px);
-    -o-transform: translate(50px, 781px);
-    transform: translate(50px, 781px);
+    -webkit-transform: translate(50px, 831px);
+    -moz-transform: translate(50px, 831px);
+    -ms-transform: translate(50px, 831px);
+    -o-transform: translate(50px, 831px);
+    transform: translate(50px, 831px);
   }
 
   #frame-2 {
-    -webkit-transform: translate(20px, 230px);
-    -moz-transform: translate(20px, 230px);
-    -ms-transform: translate(20px, 230px);
-    -o-transform: translate(20px, 230px);
-    transform: translate(20px, 230px);
+    -webkit-transform: translate(20px, 280px);
+    -moz-transform: translate(20px, 280px);
+    -ms-transform: translate(20px, 280px);
+    -o-transform: translate(20px, 280px);
+    transform: translate(20px, 280px);
   }
 
   #frame-3 {
-    -webkit-transform: translate(-210px, 512px);
-    -moz-transform: translate(-210px, 512px);
-    -ms-transform: translate(-210px, 512px);
-    -o-transform: translate(-210px, 512px);
-    transform: translate(-210px, 512px);
+    -webkit-transform: translate(-210px, 562px);
+    -moz-transform: translate(-210px, 562px);
+    -ms-transform: translate(-210px, 562px);
+    -o-transform: translate(-210px, 562px);
+    transform: translate(-210px, 562px);
   }
 
   #frame-4 {
-    -webkit-transform: translate(-260px, 955px);
-    -moz-transform: translate(-260px, 955px);
-    -ms-transform: translate(-260px, 955px);
-    -o-transform: translate(-260px, 955px);
-    transform: translate(-260px, 955px);
+    -webkit-transform: translate(-260px, 1005px);
+    -moz-transform: translate(-260px, 1005px);
+    -ms-transform: translate(-260px, 1005px);
+    -o-transform: translate(-260px, 1005px);
+    transform: translate(-260px, 1005px);
   }
 
   #frame-5 {
-    -webkit-transform: translate(-10px, 1450px);
-    -moz-transform: translate(-10px, 1450px);
-    -ms-transform: translate(-10px, 1450px);
-    -o-transform: translate(-10px, 1450px);
-    transform: translate(-10px, 1450px);
+    -webkit-transform: translate(-10px, 1500px);
+    -moz-transform: translate(-10px, 1500px);
+    -ms-transform: translate(-10px, 1500px);
+    -o-transform: translate(-10px, 1500px);
+    transform: translate(-10px, 1500px);
   }
 
   #frame-home {
-    -webkit-transform: translate(-70px, -20px);
-    -moz-transform: translate(-70px, -20px);
-    -ms-transform: translate(-70px, -20px);
-    -o-transform: translate(-70px, -20px);
-    transform: translate(-70px, -20px);
+    -webkit-transform: translate(-70px, 10px);
+    -moz-transform: translate(-70px, 10px);
+    -ms-transform: translate(-70px, 10px);
+    -o-transform: translate(-70px, 10px);
+    transform: translate(-70px, 10px);
   }
 
   #frame-about {
-    -webkit-transform: translate(-180px, 220px);
-    -moz-transform: translate(-180px, 220px);
-    -ms-transform: translate(-180px, 220px);
-    -o-transform: translate(-180px, 220px);
-    transform: translate(-180px, 220px);
+    -webkit-transform: translate(-180px, 270px);
+    -moz-transform: translate(-180px, 270px);
+    -ms-transform: translate(-180px, 270px);
+    -o-transform: translate(-180px, 270px);
+    transform: translate(-180px, 270px);
   }
 
   #frame-news {
-    -webkit-transform: translate(-180px, 710px);
-    -moz-transform: translate(-180px, 710px);
-    -ms-transform: translate(-180px, 710px);
-    -o-transform: translate(-180px, 710px);
-    transform: translate(-180px, 710px);
+    -webkit-transform: translate(-180px, 760px);
+    -moz-transform: translate(-180px, 760px);
+    -ms-transform: translate(-180px, 760px);
+    -o-transform: translate(-180px, 760px);
+    transform: translate(-180px, 760px);
   }
 
   #frame-food {
-    -webkit-transform: translate(0px, 450px);
-    -moz-transform: translate(0px, 450px);
-    -ms-transform: translate(0px, 450px);
-    -o-transform: translate(0px, 450px);
-    transform: translate(0px, 450px);
+    -webkit-transform: translate(0px, 500px);
+    -moz-transform: translate(0px, 500px);
+    -ms-transform: translate(0px, 500px);
+    -o-transform: translate(0px, 500px);
+    transform: translate(0px, 500px);
   }
 
   #frame-info {
-    -webkit-transform: translate(-130px, 1240px);
-    -moz-transform: translate(-130px, 1240px);
-    -ms-transform: translate(-130px, 1240px);
-    -o-transform: translate(-130px, 1240px);
-    transform: translate(-130px, 1240px);
+    -webkit-transform: translate(-130px, 1290px);
+    -moz-transform: translate(-130px, 1290px);
+    -ms-transform: translate(-130px, 1290px);
+    -o-transform: translate(-130px, 1290px);
+    transform: translate(-130px, 1290px);
   }
 
   #frame-private-party {
-    -webkit-transform: translate(-60px, 1040px);
-    -moz-transform: translate(-60px, 1040px);
-    -ms-transform: translate(-60px, 1040px);
-    -o-transform: translate(-60px, 1040px);
-    transform: translate(-60px, 1040px);
+    -webkit-transform: translate(-60px, 1090px);
+    -moz-transform: translate(-60px, 1090px);
+    -ms-transform: translate(-60px, 1090px);
+    -o-transform: translate(-60px, 1090px);
+    transform: translate(-60px, 1090px);
   }
 }
 .page-info .acf-map {
@@ -925,13 +928,18 @@ a {
 #header #site-title a {
   display: block;
   background: url("images/logo.svg") left center no-repeat;
-  width: 280px;
   height: 44px;
+  width: 45px;
   text-indent: -99999px;
   -webkit-transition: width 0.5s;
   -moz-transition: width 0.5s;
   -o-transition: width 0.5s;
   transition: width 0.5s;
+}
+@media (min-width: 601px) and (max-width: 1280px) {
+  #header #site-title a {
+    width: 280px;
+  }
 }
 @media (min-width: 1281px) {
   #header #site-title a {
