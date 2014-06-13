@@ -1,4 +1,19 @@
 (($) ->
+  $window  = $(window)
+  $content = $('#content')
+  $sidebar = $('#sidebar')
+
+  sidebarHeight = $sidebar.height()
+
+  $window.on 'resize', ->
+    height = $window.height()
+    width  = $window.width()
+    fix = if( width < 600 ) then 'auto' else height - 290
+    fix = sidebarHeight - 80 if fix < sidebarHeight - 80
+    $content.css 'height', fix
+
+  $window.resize()
+
   map_style = [
       "stylers": [
         { "saturation": -33 }

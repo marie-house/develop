@@ -1,7 +1,22 @@
 (function() {
 
   (function($) {
-    var add_marker, center_map, map_style, render_map;
+    var $content, $sidebar, $window, add_marker, center_map, map_style, render_map, sidebarHeight;
+    $window = $(window);
+    $content = $('#content');
+    $sidebar = $('#sidebar');
+    sidebarHeight = $sidebar.height();
+    $window.on('resize', function() {
+      var fix, height, width;
+      height = $window.height();
+      width = $window.width();
+      fix = width < 600 ? 'auto' : height - 290;
+      if (fix < sidebarHeight - 80) {
+        fix = sidebarHeight - 80;
+      }
+      return $content.css('height', fix);
+    });
+    $window.resize();
     map_style = [
       {
         "stylers": [
