@@ -86,26 +86,71 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  height: 45px;
+  min-height: 45px;
   line-height: 45px;
   z-index: 9;
 }
 #header #site-title {
-  float: left;
+  display: inline-block;
+}
+#header #menu-label {
+  border: 1px solid;
+  padding: 5px;
+  float: right;
+  height: 20px;
+  line-height: 21px;
+  margin-top: 6px;
+}
+@media (min-width: 1281px) {
+  #header #menu-label {
+    display: none;
+  }
+}
+#header #menu-toggler {
+  position: absolute;
+  left: -99999px;
+  top: -99999px;
+}
+#header #menu-toggler:checked + #menu {
+  height: 300px;
+  -webkit-transform: rotateX(0);
+  -moz-transform: rotateX(0);
+  -ms-transform: rotateX(0);
+  -o-transform: rotateX(0);
+  transform: rotateX(0);
+}
+@media (min-width: 1281px) {
+  #header #menu-toggler:checked + #menu {
+    height: auto;
+  }
 }
 #header #menu {
-  display: none;
+  height: 0;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  -ms-transform: rotateX(90deg);
+  -o-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
 }
-@media (min-width: 601px) {
+#header #menu a {
+  display: block;
+}
+@media (min-width: 1281px) {
   #header #menu {
-    display: block;
+    display: inline-block;
     float: right;
+    -webkit-transform: rotateX(0);
+    -moz-transform: rotateX(0);
+    -ms-transform: rotateX(0);
+    -o-transform: rotateX(0);
+    transform: rotateX(0);
   }
   #header #menu li {
     display: inline-block;
-  }
-  #header #menu a {
-    display: block;
     margin-left: 50px;
   }
 }
@@ -868,23 +913,59 @@ a {
   background: rgba(255, 255, 255, 0.8);
   text-transform: uppercase;
 }
-#header h1 a {
-  text-indent: -119988px;
-  overflow: hidden;
-  text-align: left;
+@media (min-width: 1281px) {
+  #header #site-title {
+    float: left;
+  }
+}
+#header #site-title a {
   display: block;
   background: url("images/logo.svg") left center no-repeat;
-  width: 502.5px;
+  width: 280px;
   height: 44px;
+  text-indent: -99999px;
+  -webkit-transition: width 0.5s;
+  -moz-transition: width 0.5s;
+  -o-transition: width 0.5s;
+  transition: width 0.5s;
+}
+@media (min-width: 1281px) {
+  #header #site-title a {
+    width: 502.5px;
+  }
+}
+
+#menu-label {
+  cursor: pointer;
+  background: #826441;
+  border-color: #826441;
+  color: white;
+  -webkit-transition: background 0.5s, color 0.5s;
+  -moz-transition: background 0.5s, color 0.5s;
+  -o-transition: background 0.5s, color 0.5s;
+  transition: background 0.5s, color 0.5s;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+#menu-label:hover {
+  color: #826441;
+  background: white;
 }
 
 #menu a {
+  border-bottom: 1px dotted #826441;
   padding-left: 13px;
   background: url("images/menu-key.png") left 15px no-repeat;
   -webkit-background-size: 6px 12px;
   -moz-background-size: 6px 12px;
   -o-background-size: 6px 12px;
   background-size: 6px 12px;
+}
+@media (min-width: 1281px) {
+  #menu a {
+    border: 0;
+  }
 }
 #menu a:hover {
   color: #826441;

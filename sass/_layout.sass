@@ -19,20 +19,45 @@ html
   top: 0
   left: 0
   right: 0
-  height: 45px
+  min-height: 45px
   line-height: 45px
   z-index: 9
   #site-title
-    float: left
+    display: inline-block
+
+  #menu-label
+    border: 1px solid
+    padding: 5px
+    float: right
+    height: 20px
+    line-height: 21px
+    margin-top: 6px
+    +dt
+      display: none
+
+  #menu-toggler
+    position: absolute
+    left: -99999px
+    top: -99999px
+    &:checked
+      + #menu
+        height: 300px
+        +dt
+          height: auto
+        +transform(rotateX(0))
+
   #menu
-    display: none
-    +ns
+    height: 0
+    +transform(rotateX(90deg))
+    +transition( .5s )
+    a
       display: block
+    +dt
+      display: inline-block
       float: right
+      +transform(rotateX(0))
       li
         display: inline-block
-      a
-        display: block
         margin-left: 50px
 
 #sidebar

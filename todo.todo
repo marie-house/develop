@@ -1,10 +1,12 @@
 Content:
   Private party:
   food:
-Javascript:
-  [ ] window resize
-CSS:
-  Pages:
+    [ ] check the sort on production
+RWD:
+  [ ] Logo
+  [ ] Menu
+  [ ] Homepage
+  [ ] View port
 PHP:
   food:
 
