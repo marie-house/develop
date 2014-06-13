@@ -402,6 +402,10 @@ body.page-food #sidebar li {
   background-size: 15px 19px, 15px 19px;
 }
 
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
 img {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
