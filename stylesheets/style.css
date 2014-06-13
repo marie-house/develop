@@ -94,7 +94,6 @@ html {
   display: inline-block;
 }
 #header #menu-label {
-  border: 1px solid;
   padding: 5px;
   float: right;
   height: 20px;
@@ -202,11 +201,11 @@ html {
 }
 
 body {
-  font-family: Didot, times, serif;
+  font-family: Didot, times, HiraMinProN-W3, serif;
 }
 
 p {
-  font-family: times, serif;
+  font-family: times, HiraMinProN-W3, serif;
 }
 
 #header h1 {
@@ -950,8 +949,8 @@ a {
 #menu-label {
   cursor: pointer;
   background: #826441;
-  border-color: #826441;
   color: white;
+  border: 1px solid #826441;
   -webkit-transition: background 0.5s, color 0.5s;
   -moz-transition: background 0.5s, color 0.5s;
   -o-transition: background 0.5s, color 0.5s;
