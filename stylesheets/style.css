@@ -175,6 +175,7 @@ html {
   position: relative;
   overflow: auto;
   padding: 20px;
+  margin-bottom: 20px;
 }
 @media (min-width: 601px) {
   #content {
