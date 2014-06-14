@@ -61,14 +61,25 @@ html
         margin-left: 50px
 
 #sidebar
-  display: none
-  +ns
+  min-width: 0
+  width: 100%
+  .cover
     display: block
+    margin: 0 auto
+    margin-bottom: 30px
+    width: 60%
+    height: auto
+  ul
+    display: none
+  +ns
     min-width: 200px
     width: 15%
-    img
+    .cover
       width: 100%
-      height: auto
+      margin-bottom: 0
+    ul
+      display: block
+
 
 #content
   position: relative

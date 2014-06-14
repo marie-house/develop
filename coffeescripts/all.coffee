@@ -2,17 +2,9 @@
   $window  = $(window)
   $content = $('#content')
   $sidebar = $('#sidebar')
+  $maps    = $('.acf-map')
 
   sidebarHeight = $sidebar.height()
-
-  $window.on 'resize', ->
-    height = $window.height()
-    width  = $window.width()
-    fix = if( width < 600 ) then 'auto' else height - 290
-    fix = sidebarHeight - 80 if fix < sidebarHeight - 80
-    $content.css 'height', fix
-
-  $window.resize()
 
   map_style = [
       "stylers": [
@@ -31,6 +23,7 @@
       mapTypeId              : google.maps.MapTypeId.ROADMAP
       scrollwheel            : false
       disableDoubleClickZoom : true
+      draggable              : false
       styles                 : map_style
 
     map = new google.maps.Map($el[0], args)
@@ -67,5 +60,14 @@
     else
       map.fitBounds( bounds )
 
-  $('.acf-map').each -> render_map( $(@) )
+  $maps.each -> render_map( $(@) )
+
+  $window.on 'resize', ->
+    height = $window.height()
+    width  = $window.width()
+    fix = if( width < 600 ) then 'auto' else height - 290
+    fix = sidebarHeight - 80 if fix < sidebarHeight - 80
+    $content.css 'height', fix
+
+  $window.resize()
 )(jQuery)

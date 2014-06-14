@@ -53,10 +53,12 @@ $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
 .page-info
   .acf-map
     width: 100%
-    height: 400px
+    height: 300px
     border: #ccc solid 1px
     margin: 20px 0
     position: relative
+    +ns
+      height: 400px
   #group
     $width: 180px
     $height: $width * 160 / 445
