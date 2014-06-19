@@ -33,7 +33,7 @@ $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
   #frame-#{nth($pair, 1)}
     +transform( translate( nth($position, 1) * 1px, nth($position, 2) * 1px ))
 
-+max(1290px)
++max(1260px)
   @each $pair in $frames
     $position: nth($pair, 3)
     #frame-#{nth($pair, 1)}

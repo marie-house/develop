@@ -16,7 +16,7 @@
     left: 0
 
 $mobile: 600px
-$tablet: 1280px
+$tablet: 1260px
 
 =min( $min )
   @media (min-width: $min + 1)
@@ -63,21 +63,3 @@ $tablet: 1280px
 =ns
   +mq("not-mobile")
     @content
-
-
-  // @else
-  //   @if $mq == "desktop"
-  //     @media (min-width: $desktop)
-  //       @content
-  //   @else if $mq == "mobile"
-  //     @media (max-width: $mobile)
-  //       @content
-  //   @else if $mq == "pad"
-  //     +between( $mobile, $desktop)
-  //       @content
-  //   @else if $mq == "notsmall"
-  //     @media (min-width: $mobile)
-  //       @content
-  //   @else if $mq == "notlarge"
-  //     @media (max-width: $desktop)
-  //       @content
