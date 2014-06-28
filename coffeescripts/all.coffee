@@ -9,8 +9,9 @@
   map_style = [
       "stylers": [
         { "saturation": -33 }
-        { "hue": "#ff0000" }
-        { "gamma": 1.37 }
+        { "hue": "#00aadd" }
+        { "lightness": -3 }
+        { "gamma": 0.8 }
       ]
   ]
 
@@ -65,9 +66,11 @@
   $window.on 'resize', ->
     height = $window.height()
     width  = $window.width()
-    fix = if( width < 600 ) then 'auto' else height - 290
+    fix = if( width < 600 ) then 'auto' else height - 330
     fix = sidebarHeight - 80 if fix < sidebarHeight - 80
     $content.css 'height', fix
+  $('img').on 'dragstart', (e) ->
+    e.preventDefault()
 
   $window.resize()
 )(jQuery)

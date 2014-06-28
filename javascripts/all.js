@@ -13,9 +13,11 @@
           {
             "saturation": -33
           }, {
-            "hue": "#ff0000"
+            "hue": "#00aadd"
           }, {
-            "gamma": 1.37
+            "lightness": -3
+          }, {
+            "gamma": 0.8
           }
         ]
       }
@@ -78,11 +80,14 @@
       var fix, height, width;
       height = $window.height();
       width = $window.width();
-      fix = width < 600 ? 'auto' : height - 290;
+      fix = width < 600 ? 'auto' : height - 330;
       if (fix < sidebarHeight - 80) {
         fix = sidebarHeight - 80;
       }
       return $content.css('height', fix);
+    });
+    $('img').on('dragstart', function(e) {
+      return e.preventDefault();
     });
     return $window.resize();
   })(jQuery);

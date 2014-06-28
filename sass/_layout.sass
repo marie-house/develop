@@ -1,9 +1,9 @@
 #wpadminbar
   display: none
 html
-  padding-top: 70px !important
+  padding-top: 30px !important
   +ns
-    padding-top: 60px - 32 + 60 !important
+    padding-top: 43px !important
 
 .container, .frames
   margin: 0 auto
@@ -11,7 +11,8 @@ html
 .container
   padding: 0 20px
   +ns
-    padding: 0 50px
+    padding: 0 45px
+    padding-right: 65px
 
 #header
   position: fixed
@@ -58,7 +59,7 @@ html
       +transform(rotateX(0))
       li
         display: inline-block
-        margin-left: 50px
+        margin-left: 60px
 
 #sidebar
   min-width: 0
@@ -71,15 +72,18 @@ html
     height: auto
   ul
     display: none
+    margin: 40px 12px
+  li
+    margin-bottom: 5px
   +ns
     min-width: 200px
     width: 15%
+    margin-left: -25px
     .cover
       width: 100%
       margin-bottom: 0
     ul
       display: block
-
 
 #content
   display: block
@@ -87,12 +91,13 @@ html
   overflow: auto
   padding: 20px
   margin-bottom: 20px
+  +transition(height .3s)
   +ns
     border: 20px solid transparent
     margin-left: 200px
     margin-bottom: 50px
     left: 2%
-    height: 550px
+    height: 500px
 
   article
     padding-top: 20px

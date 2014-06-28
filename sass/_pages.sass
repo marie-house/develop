@@ -4,17 +4,17 @@
   .symbol-info-2
     margin: 10px 0
 
-$home    : ("home",         -580  010, -360  090, -350  120,  -70  10)
-$a       : ("1",            -364  080, -253 -119, -253 -119,   50  831)
-$about   : ("about",        -190  -20,  -90  -20,  -90  -20, -180  270)
-$b       : ("2",             030  030,  130  030,  130  030,   20  280)
-$private : ("private-party", 270  -10, -100  540, -115  540,  -60 1090)
-$c       : ("3",            -620  280, -520  350,  180  550, -210  562)
-$news    : ("news",         -420  300, -333  400, -333  400, -180  760)
-$d       : ("4",            -170  270, -110  240, -110  265, -260 1005)
-$food    : ("food",          030  240,  110  260,  110  260,    0  500)
-$e       : ("5",             250  210,  350  210, -206  840,  -10 1500)
-$info    : ("info",          430  290,  240  520,   40  750, -130 1290)
+$home    : ("home",         -637  -33, -360  090, -350  120,  -70  10)
+$a       : ("1",            -390  041, -253 -119, -253 -119,   50  831)
+$about   : ("about",        -175  -38,  -90  -20,  -90  -20, -180  270)
+$b       : ("2",             074  -10,  130  030,  130  030,   20  280)
+$private : ("private-party", 386  -45, -100  540, -115  540,  -60 1090)
+$c       : ("3",            -675  282, -520  350,  180  550, -210  562)
+$news    : ("news",         -444  280, -333  400, -333  400, -180  760)
+$d       : ("4",            -185  268, -110  240, -110  265, -260 1005)
+$food    : ("food",          032  227,  110  260,  110  260,    0  500)
+$e       : ("5",             280  209,  350  210, -206  840,  -10 1500)
+$info    : ("info",          486  305,  240  520,   40  750, -130 1290)
 $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
 
 .page-home
@@ -108,11 +108,37 @@ $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
       margin-top: 80px
 
 .page-about
+  #sidebar
+    .cover
+      width: 93%
+    ul
+      margin-top: 4px
   #history
     strong
       margin-top: 50px
       +ns
         margin-top: 0
+
+.page-food
+  #sidebar
+    .cover
+      width: 93%
+    ul
+      margin-top: 8px
+
+.page-private-party
+  #sidebar
+    .cover
+      width: 114%
+      margin-left: -5%
+      margin-top: 25px
+    ul
+      margin-top: 62px
+
+.page-info
+  #sidebar
+    ul
+      margin-top: 50px
 
 .page-news, .page-about, .page-food
   img

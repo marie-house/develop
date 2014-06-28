@@ -8,13 +8,14 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<div id="background"></div>
 <div id="wrapper" class="hfeed">
   <header id="header" class="clearfix" role="banner">
     <div class="container">
+      <label id="menu-label" class="pull-right" for="menu-toggler">Menu</label>
       <h1 id="site-title">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'mhouse' ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
       </h1>
-      <label id="menu-label" for="menu-toggler">Menu</label>
       <input type="checkbox" id="menu-toggler">
       <nav id="menu" role="navigation">
         <?php wp_nav_menu(); ?>

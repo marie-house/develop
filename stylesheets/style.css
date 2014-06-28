@@ -59,11 +59,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 html {
-  padding-top: 70px !important;
+  padding-top: 30px !important;
 }
 @media (min-width: 601px) {
   html {
-    padding-top: 88px !important;
+    padding-top: 43px !important;
   }
 }
 
@@ -77,7 +77,8 @@ html {
 }
 @media (min-width: 601px) {
   .container {
-    padding: 0 50px;
+    padding: 0 45px;
+    padding-right: 65px;
   }
 }
 
@@ -152,7 +153,7 @@ html {
   }
   #header #menu li {
     display: inline-block;
-    margin-left: 50px;
+    margin-left: 60px;
   }
 }
 
@@ -169,11 +170,16 @@ html {
 }
 #sidebar ul {
   display: none;
+  margin: 40px 12px;
+}
+#sidebar li {
+  margin-bottom: 5px;
 }
 @media (min-width: 601px) {
   #sidebar {
     min-width: 200px;
     width: 15%;
+    margin-left: -25px;
   }
   #sidebar .cover {
     width: 100%;
@@ -190,6 +196,10 @@ html {
   overflow: auto;
   padding: 20px;
   margin-bottom: 20px;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  -o-transition: height 0.3s;
+  transition: height 0.3s;
 }
 @media (min-width: 601px) {
   #content {
@@ -197,7 +207,7 @@ html {
     margin-left: 200px;
     margin-bottom: 50px;
     left: 2%;
-    height: 550px;
+    height: 500px;
   }
 }
 #content article {
@@ -230,6 +240,10 @@ p {
 }
 #header nav a {
   font-size: 0.8em;
+}
+
+#sidebar li {
+  letter-spacing: 5px;
 }
 
 #content {
@@ -287,6 +301,22 @@ body.page-home #sidebar li {
   -o-background-size: 15px 19px, 15px 19px;
   background-size: 15px 19px, 15px 19px;
 }
+body.page-home #background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  opacity: 0.5;
+  pointer-events: none;
+  background: url("images/bg-home.jpg");
+  -webkit-background-size: 1440px 780px;
+  -moz-background-size: 1440px 780px;
+  -o-background-size: 1440px 780px;
+  background-size: 1440px 780px;
+  display: none;
+}
 
 body.page-about {
   background: url("images/wall-about.jpg") #b2bc8e;
@@ -312,6 +342,22 @@ body.page-about #sidebar li {
   -moz-background-size: 15px 19px, 15px 19px;
   -o-background-size: 15px 19px, 15px 19px;
   background-size: 15px 19px, 15px 19px;
+}
+body.page-about #background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  opacity: 0.5;
+  pointer-events: none;
+  background: url("images/bg-about.jpg");
+  -webkit-background-size: 1440px 780px;
+  -moz-background-size: 1440px 780px;
+  -o-background-size: 1440px 780px;
+  background-size: 1440px 780px;
+  display: none;
 }
 
 body.page-private-party {
@@ -339,16 +385,32 @@ body.page-private-party #sidebar li {
   -o-background-size: 15px 19px, 15px 19px;
   background-size: 15px 19px, 15px 19px;
 }
+body.page-private-party #background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  opacity: 0.5;
+  pointer-events: none;
+  background: url("images/bg-private-party.jpg");
+  -webkit-background-size: 1440px 780px;
+  -moz-background-size: 1440px 780px;
+  -o-background-size: 1440px 780px;
+  background-size: 1440px 780px;
+  display: none;
+}
 
 body.page-info {
-  background: url("images/wall-info.jpg") #afc4c7;
+  background: url("images/wall-info.jpg") #93a1a2;
   -webkit-background-size: 200px 300px;
   -moz-background-size: 200px 300px;
   -o-background-size: 200px 300px;
   background-size: 200px 300px;
 }
 body.page-info a.active, body.page-info a:hover {
-  color: afc4c7;
+  color: 93a1a2;
 }
 body.page-info #content h2 {
   background: url("images/title-info.png") center center no-repeat;
@@ -365,16 +427,32 @@ body.page-info #sidebar li {
   -o-background-size: 15px 19px, 15px 19px;
   background-size: 15px 19px, 15px 19px;
 }
+body.page-info #background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  opacity: 0.5;
+  pointer-events: none;
+  background: url("images/bg-info.jpg");
+  -webkit-background-size: 1440px 780px;
+  -moz-background-size: 1440px 780px;
+  -o-background-size: 1440px 780px;
+  background-size: 1440px 780px;
+  display: none;
+}
 
 body.page-news, body.category {
-  background: url("images/wall-news.jpg") #dbb9b4;
+  background: url("images/wall-news.jpg") #d6aea8;
   -webkit-background-size: 200px 300px;
   -moz-background-size: 200px 300px;
   -o-background-size: 200px 300px;
   background-size: 200px 300px;
 }
 body.page-news a.active, body.page-news a:hover, body.category a.active, body.category a:hover {
-  color: dbb9b4;
+  color: d6aea8;
 }
 body.page-news #content h2, body.category #content h2 {
   background: url("images/title-news.png") center center no-repeat;
@@ -391,16 +469,32 @@ body.page-news #sidebar li, body.category #sidebar li {
   -o-background-size: 15px 19px, 15px 19px;
   background-size: 15px 19px, 15px 19px;
 }
+body.page-news #background, body.category #background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  opacity: 0.5;
+  pointer-events: none;
+  background: url("images/bg-news.jpg");
+  -webkit-background-size: 1440px 780px;
+  -moz-background-size: 1440px 780px;
+  -o-background-size: 1440px 780px;
+  background-size: 1440px 780px;
+  display: none;
+}
 
 body.page-food {
-  background: url("images/wall-food.jpg") #e7d9b8;
+  background: url("images/wall-food.jpg") #dac9a2;
   -webkit-background-size: 239px 347px;
   -moz-background-size: 239px 347px;
   -o-background-size: 239px 347px;
   background-size: 239px 347px;
 }
 body.page-food a.active, body.page-food a:hover {
-  color: e7d9b8;
+  color: dac9a2;
 }
 body.page-food #content h2 {
   background: url("images/title-food.png") center center no-repeat;
@@ -416,6 +510,22 @@ body.page-food #sidebar li {
   -moz-background-size: 15px 19px, 15px 19px;
   -o-background-size: 15px 19px, 15px 19px;
   background-size: 15px 19px, 15px 19px;
+}
+body.page-food #background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  opacity: 0.5;
+  pointer-events: none;
+  background: url("images/bg-food.jpg");
+  -webkit-background-size: 1440px 780px;
+  -moz-background-size: 1440px 780px;
+  -o-background-size: 1440px 780px;
+  background-size: 1440px 780px;
+  display: none;
 }
 
 body {
@@ -481,91 +591,91 @@ a {
 }
 
 #frame-1 {
-  -webkit-transform: translate(-364px, 80px);
-  -moz-transform: translate(-364px, 80px);
-  -ms-transform: translate(-364px, 80px);
-  -o-transform: translate(-364px, 80px);
-  transform: translate(-364px, 80px);
+  -webkit-transform: translate(-390px, 41px);
+  -moz-transform: translate(-390px, 41px);
+  -ms-transform: translate(-390px, 41px);
+  -o-transform: translate(-390px, 41px);
+  transform: translate(-390px, 41px);
 }
 
 #frame-2 {
-  -webkit-transform: translate(30px, 30px);
-  -moz-transform: translate(30px, 30px);
-  -ms-transform: translate(30px, 30px);
-  -o-transform: translate(30px, 30px);
-  transform: translate(30px, 30px);
+  -webkit-transform: translate(74px, -10px);
+  -moz-transform: translate(74px, -10px);
+  -ms-transform: translate(74px, -10px);
+  -o-transform: translate(74px, -10px);
+  transform: translate(74px, -10px);
 }
 
 #frame-3 {
-  -webkit-transform: translate(-620px, 280px);
-  -moz-transform: translate(-620px, 280px);
-  -ms-transform: translate(-620px, 280px);
-  -o-transform: translate(-620px, 280px);
-  transform: translate(-620px, 280px);
+  -webkit-transform: translate(-675px, 282px);
+  -moz-transform: translate(-675px, 282px);
+  -ms-transform: translate(-675px, 282px);
+  -o-transform: translate(-675px, 282px);
+  transform: translate(-675px, 282px);
 }
 
 #frame-4 {
-  -webkit-transform: translate(-170px, 270px);
-  -moz-transform: translate(-170px, 270px);
-  -ms-transform: translate(-170px, 270px);
-  -o-transform: translate(-170px, 270px);
-  transform: translate(-170px, 270px);
+  -webkit-transform: translate(-185px, 268px);
+  -moz-transform: translate(-185px, 268px);
+  -ms-transform: translate(-185px, 268px);
+  -o-transform: translate(-185px, 268px);
+  transform: translate(-185px, 268px);
 }
 
 #frame-5 {
-  -webkit-transform: translate(250px, 210px);
-  -moz-transform: translate(250px, 210px);
-  -ms-transform: translate(250px, 210px);
-  -o-transform: translate(250px, 210px);
-  transform: translate(250px, 210px);
+  -webkit-transform: translate(280px, 209px);
+  -moz-transform: translate(280px, 209px);
+  -ms-transform: translate(280px, 209px);
+  -o-transform: translate(280px, 209px);
+  transform: translate(280px, 209px);
 }
 
 #frame-home {
-  -webkit-transform: translate(-580px, 10px);
-  -moz-transform: translate(-580px, 10px);
-  -ms-transform: translate(-580px, 10px);
-  -o-transform: translate(-580px, 10px);
-  transform: translate(-580px, 10px);
+  -webkit-transform: translate(-637px, -33px);
+  -moz-transform: translate(-637px, -33px);
+  -ms-transform: translate(-637px, -33px);
+  -o-transform: translate(-637px, -33px);
+  transform: translate(-637px, -33px);
 }
 
 #frame-about {
-  -webkit-transform: translate(-190px, -20px);
-  -moz-transform: translate(-190px, -20px);
-  -ms-transform: translate(-190px, -20px);
-  -o-transform: translate(-190px, -20px);
-  transform: translate(-190px, -20px);
+  -webkit-transform: translate(-175px, -38px);
+  -moz-transform: translate(-175px, -38px);
+  -ms-transform: translate(-175px, -38px);
+  -o-transform: translate(-175px, -38px);
+  transform: translate(-175px, -38px);
 }
 
 #frame-news {
-  -webkit-transform: translate(-420px, 300px);
-  -moz-transform: translate(-420px, 300px);
-  -ms-transform: translate(-420px, 300px);
-  -o-transform: translate(-420px, 300px);
-  transform: translate(-420px, 300px);
+  -webkit-transform: translate(-444px, 280px);
+  -moz-transform: translate(-444px, 280px);
+  -ms-transform: translate(-444px, 280px);
+  -o-transform: translate(-444px, 280px);
+  transform: translate(-444px, 280px);
 }
 
 #frame-food {
-  -webkit-transform: translate(30px, 240px);
-  -moz-transform: translate(30px, 240px);
-  -ms-transform: translate(30px, 240px);
-  -o-transform: translate(30px, 240px);
-  transform: translate(30px, 240px);
+  -webkit-transform: translate(32px, 227px);
+  -moz-transform: translate(32px, 227px);
+  -ms-transform: translate(32px, 227px);
+  -o-transform: translate(32px, 227px);
+  transform: translate(32px, 227px);
 }
 
 #frame-info {
-  -webkit-transform: translate(430px, 290px);
-  -moz-transform: translate(430px, 290px);
-  -ms-transform: translate(430px, 290px);
-  -o-transform: translate(430px, 290px);
-  transform: translate(430px, 290px);
+  -webkit-transform: translate(486px, 305px);
+  -moz-transform: translate(486px, 305px);
+  -ms-transform: translate(486px, 305px);
+  -o-transform: translate(486px, 305px);
+  transform: translate(486px, 305px);
 }
 
 #frame-private-party {
-  -webkit-transform: translate(270px, -10px);
-  -moz-transform: translate(270px, -10px);
-  -ms-transform: translate(270px, -10px);
-  -o-transform: translate(270px, -10px);
-  transform: translate(270px, -10px);
+  -webkit-transform: translate(386px, -45px);
+  -moz-transform: translate(386px, -45px);
+  -ms-transform: translate(386px, -45px);
+  -o-transform: translate(386px, -45px);
+  transform: translate(386px, -45px);
 }
 
 @media (max-width: 1260px) {
@@ -908,6 +1018,12 @@ a {
   margin-top: 80px;
 }
 
+.page-about #sidebar .cover {
+  width: 93%;
+}
+.page-about #sidebar ul {
+  margin-top: 4px;
+}
 .page-about #history strong {
   margin-top: 50px;
 }
@@ -915,6 +1031,26 @@ a {
   .page-about #history strong {
     margin-top: 0;
   }
+}
+
+.page-food #sidebar .cover {
+  width: 93%;
+}
+.page-food #sidebar ul {
+  margin-top: 8px;
+}
+
+.page-private-party #sidebar .cover {
+  width: 114%;
+  margin-left: -5%;
+  margin-top: 25px;
+}
+.page-private-party #sidebar ul {
+  margin-top: 62px;
+}
+
+.page-info #sidebar ul {
+  margin-top: 50px;
 }
 
 .page-news img, .page-about img, .page-food img {
@@ -948,7 +1084,7 @@ a {
   display: block;
   background: url("images/logo.svg") left center no-repeat;
   height: 44px;
-  width: 45px;
+  width: 235px;
   text-indent: -99999px;
   -webkit-transition: width 0.5s;
   -moz-transition: width 0.5s;
@@ -957,12 +1093,12 @@ a {
 }
 @media (min-width: 601px) and (max-width: 1260px) {
   #header #site-title a {
-    width: 280px;
+    width: 435.5px;
   }
 }
 @media (min-width: 1261px) {
   #header #site-title a {
-    width: 502.5px;
+    width: 435.5px;
   }
 }
 
@@ -1030,14 +1166,10 @@ a {
   margin: 5px auto;
 }
 
-#sidebar ul {
-  margin: 50px 10px;
-}
 #sidebar li {
   font-size: 0.8em;
   padding: 13px 10px 12px 11px;
   text-align: center;
-  margin-bottom: 10px;
   position: relative;
 }
 #sidebar li::before {

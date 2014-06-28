@@ -1,5 +1,5 @@
 $pages     : "home",   "about",  "private-party", "info",   "news",   "food"
-$bg-colors : "efe7e4", "b2bc8e", "ccb4d6",        "afc4c7", "dbb9b4", "e7d9b8"
+$bg-colors : "efe7e4", "b2bc8e", "ccb4d6",        "93a1a2", "d6aea8", "dac9a2"
 
 
 
@@ -10,6 +10,7 @@ $bg-colors : "efe7e4", "b2bc8e", "ccb4d6",        "afc4c7", "dbb9b4", "e7d9b8"
   @else
     body.page-#{$page}
       @content
+
 
 @for $i from 1 through length($pages)
   $page: nth( $pages, $i )
@@ -40,3 +41,15 @@ $bg-colors : "efe7e4", "b2bc8e", "ccb4d6",        "afc4c7", "dbb9b4", "e7d9b8"
         background-repeat: no-repeat
         +background-size(15px 19px, 15px 19px)
 
+    #background
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      z-index: 100
+      opacity: 0.5
+      pointer-events: none
+      background: url('images/bg-#{$page}.jpg')
+      +background-size(1920px * 1440/1920  1040px * 1440/1920)
+      display: none
