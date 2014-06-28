@@ -20,6 +20,8 @@ $text-color: #826441
       width: 235px
       text-indent: -99999px
       +transition( width .5s )
+      +max(390px)
+        width: 35px
       +pad
         width: 335px * 1.3
       +dt
@@ -56,15 +58,12 @@ $text-color: #826441
   .post
     .entry-date
       display: block
-      margin-bottom: 10px
     h3
-      font-size: 1.1em
       margin-bottom: 30px
     img
       margin: 5px auto
 #sidebar
   li
-    font-size: .8em
     padding: 13px 10px 12px 11px
     text-align: center
     position: relative

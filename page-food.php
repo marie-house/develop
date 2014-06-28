@@ -46,7 +46,7 @@ endif;
 
 <?php
   $cat = get_category_by_slug('menus');
-  $categories = get_categories( array('child_of' => $cat->term_id) );
+  $categories = get_categories( array('child_of' => $cat->term_id, 'orderby' => 'slug', 'order' => 'DESC' ) );
   foreach($categories as $category): $slug = $category->slug; ?>
   <?php query_posts( array ( 'category_name' => $slug, 'posts_per_page' => 1 ) ); ?>
   <article id="<?php echo $slug ?>">

@@ -59,11 +59,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 html {
-  padding-top: 30px !important;
+  padding-top: 40px !important;
 }
 @media (min-width: 601px) {
   html {
-    padding-top: 43px !important;
+    padding-top: 42px !important;
   }
 }
 
@@ -90,6 +90,9 @@ html {
   min-height: 45px;
   line-height: 45px;
   z-index: 9;
+}
+#header .container {
+  padding-right: 55px;
 }
 #header #site-title {
   display: inline-block;
@@ -153,7 +156,7 @@ html {
   }
   #header #menu li {
     display: inline-block;
-    margin-left: 60px;
+    margin-left: 49px;
   }
 }
 
@@ -195,7 +198,7 @@ html {
   position: relative;
   overflow: auto;
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   -webkit-transition: height 0.3s;
   -moz-transition: height 0.3s;
   -o-transition: height 0.3s;
@@ -212,10 +215,13 @@ html {
 }
 #content article {
   padding-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 #content article .symbol {
   margin-bottom: 10px;
+}
+#content .entry-date {
+  margin-bottom: 26px;
 }
 #content img {
   max-width: 100%;
@@ -223,6 +229,18 @@ html {
 }
 #content .acf-map img {
   max-width: none;
+}
+
+#footer {
+  height: 80px;
+}
+@media (min-width: 601px) {
+  #footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
 
 body {
@@ -240,10 +258,12 @@ p {
 }
 #header nav a {
   font-size: 0.8em;
+  letter-spacing: 0.1em;
 }
 
 #sidebar li {
   letter-spacing: 5px;
+  font-size: 0.8em;
 }
 
 #content {
@@ -251,18 +271,22 @@ p {
   color: #826441;
   font-weight: bold;
 }
+#content .entry-date {
+  font-size: 1.1em;
+  display: block;
+}
 #content h2, #content strong {
   font-size: 1.2em;
   letter-spacing: 0.3em;
 }
 #content p {
   font-size: 0.8em;
-  line-height: 1.8em;
-  letter-spacing: 0.1em;
+  line-height: 2.15em;
+  letter-spacing: 0.2em;
   font-weight: normal;
 }
 #content strong {
-  font-size: 1.5em;
+  font-size: 1.65em;
   display: block;
   margin-bottom: 10px;
   font-weight: bold;
@@ -270,10 +294,21 @@ p {
 #content h3 {
   margin-bottom: 5px;
   font-weight: bold;
+  font-size: 1.3em;
+  letter-spacing: 0.32em;
+}
+#content h4 {
+  font-size: 1.2em;
+  letter-spacing: 0.3em;
+}
+#content sub {
+  font-size: 0.7em;
+  letter-spacing: 0.05em;
 }
 #content h6 {
   font-size: 0.7em;
-  margin-bottom: 10px;
+  margin: 10px;
+  letter-spacing: 0.1em;
 }
 
 body.page-home {
@@ -300,6 +335,13 @@ body.page-home #sidebar li {
   -moz-background-size: 15px 19px, 15px 19px;
   -o-background-size: 15px 19px, 15px 19px;
   background-size: 15px 19px, 15px 19px;
+}
+body.page-home #footer {
+  background: url("images/wood-home.jpg") center top repeat-x;
+  -webkit-background-size: 125px 80px;
+  -moz-background-size: 125px 80px;
+  -o-background-size: 125px 80px;
+  background-size: 125px 80px;
 }
 body.page-home #background {
   position: absolute;
@@ -343,6 +385,13 @@ body.page-about #sidebar li {
   -o-background-size: 15px 19px, 15px 19px;
   background-size: 15px 19px, 15px 19px;
 }
+body.page-about #footer {
+  background: url("images/wood-about.jpg") center top repeat-x;
+  -webkit-background-size: 125px 80px;
+  -moz-background-size: 125px 80px;
+  -o-background-size: 125px 80px;
+  background-size: 125px 80px;
+}
 body.page-about #background {
   position: absolute;
   top: 0;
@@ -384,6 +433,13 @@ body.page-private-party #sidebar li {
   -moz-background-size: 15px 19px, 15px 19px;
   -o-background-size: 15px 19px, 15px 19px;
   background-size: 15px 19px, 15px 19px;
+}
+body.page-private-party #footer {
+  background: url("images/wood-private-party.jpg") center top repeat-x;
+  -webkit-background-size: 125px 80px;
+  -moz-background-size: 125px 80px;
+  -o-background-size: 125px 80px;
+  background-size: 125px 80px;
 }
 body.page-private-party #background {
   position: absolute;
@@ -427,6 +483,13 @@ body.page-info #sidebar li {
   -o-background-size: 15px 19px, 15px 19px;
   background-size: 15px 19px, 15px 19px;
 }
+body.page-info #footer {
+  background: url("images/wood-info.jpg") center top repeat-x;
+  -webkit-background-size: 125px 80px;
+  -moz-background-size: 125px 80px;
+  -o-background-size: 125px 80px;
+  background-size: 125px 80px;
+}
 body.page-info #background {
   position: absolute;
   top: 0;
@@ -469,6 +532,13 @@ body.page-news #sidebar li, body.category #sidebar li {
   -o-background-size: 15px 19px, 15px 19px;
   background-size: 15px 19px, 15px 19px;
 }
+body.page-news #footer, body.category #footer {
+  background: url("images/wood-news.jpg") center top repeat-x;
+  -webkit-background-size: 125px 80px;
+  -moz-background-size: 125px 80px;
+  -o-background-size: 125px 80px;
+  background-size: 125px 80px;
+}
 body.page-news #background, body.category #background {
   position: absolute;
   top: 0;
@@ -510,6 +580,13 @@ body.page-food #sidebar li {
   -moz-background-size: 15px 19px, 15px 19px;
   -o-background-size: 15px 19px, 15px 19px;
   background-size: 15px 19px, 15px 19px;
+}
+body.page-food #footer {
+  background: url("images/wood-food.jpg") center top repeat-x;
+  -webkit-background-size: 125px 80px;
+  -moz-background-size: 125px 80px;
+  -o-background-size: 125px 80px;
+  background-size: 125px 80px;
 }
 body.page-food #background {
   position: absolute;
@@ -578,7 +655,11 @@ a {
 .page-home .frames {
   position: relative;
   width: 10px;
-  margin: 0 auto;
+}
+@media (min-width: 601px) {
+  .page-home .frames {
+    margin: 40px auto 0;
+  }
 }
 .page-home .frame {
   position: absolute;
@@ -588,6 +669,14 @@ a {
   -moz-transition: -moz-transform 0.5s;
   -o-transition: -o-transform 0.5s;
   transition: transform 0.5s;
+}
+.page-home #footer {
+  display: none;
+}
+@media (min-width: 1261px) {
+  .page-home #footer {
+    display: block;
+  }
 }
 
 #frame-1 {
@@ -1000,29 +1089,41 @@ a {
   background-size: 180px 64.7191px;
 }
 
+.page-food #features {
+  padding-top: 16px;
+}
 .page-food #features h3 {
-  margin-top: 20px;
+  margin-top: 65px;
+}
+.page-food #features h2 + .symbol {
+  width: 12px;
+  margin: -5px auto 5px;
 }
 .page-food .meterials-list {
   margin-bottom: 80px;
 }
 .page-food .meterials-list sub {
-  font-size: 0.6em;
-  margin: 10px;
+  margin: 5px;
   display: block;
 }
 .page-food .meterials-list img {
   margin: 10px;
 }
 .page-food .meterials-list li {
-  margin-top: 80px;
+  margin-top: 46px;
 }
 
-.page-about #sidebar .cover {
-  width: 93%;
-}
 .page-about #sidebar ul {
-  margin-top: 4px;
+  margin-top: 0px;
+}
+@media (min-width: 601px) {
+  .page-about #sidebar .cover {
+    width: 93%;
+    margin-top: -5px;
+  }
+}
+.page-about #history {
+  padding-top: 17px;
 }
 .page-about #history strong {
   margin-top: 50px;
@@ -1033,24 +1134,41 @@ a {
   }
 }
 
-.page-food #sidebar .cover {
-  width: 93%;
-}
 .page-food #sidebar ul {
   margin-top: 8px;
 }
-
-.page-private-party #sidebar .cover {
-  width: 114%;
-  margin-left: -5%;
-  margin-top: 25px;
+@media (min-width: 601px) {
+  .page-food #sidebar .cover {
+    width: 93%;
+  }
 }
+
 .page-private-party #sidebar ul {
   margin-top: 62px;
+}
+@media (min-width: 601px) {
+  .page-private-party #sidebar .cover {
+    width: 114%;
+    margin-left: -5%;
+    margin-top: 25px;
+  }
+}
+.page-private-party #price {
+  padding-top: 16px;
+}
+.page-private-party #price .symbol {
+  margin-bottom: 20px;
+}
+.page-private-party #price h3 {
+  font-size: 1em;
 }
 
 .page-info #sidebar ul {
   margin-top: 50px;
+}
+
+#informations .brading-info {
+  margin-bottom: 25px;
 }
 
 .page-news img, .page-about img, .page-food img {
@@ -1090,6 +1208,11 @@ a {
   -moz-transition: width 0.5s;
   -o-transition: width 0.5s;
   transition: width 0.5s;
+}
+@media (max-width: 390px) {
+  #header #site-title a {
+    width: 35px;
+  }
 }
 @media (min-width: 601px) and (max-width: 1260px) {
   #header #site-title a {
@@ -1156,10 +1279,8 @@ a {
 }
 #content .post .entry-date {
   display: block;
-  margin-bottom: 10px;
 }
 #content .post h3 {
-  font-size: 1.1em;
   margin-bottom: 30px;
 }
 #content .post img {
@@ -1167,7 +1288,6 @@ a {
 }
 
 #sidebar li {
-  font-size: 0.8em;
   padding: 13px 10px 12px 11px;
   text-align: center;
   position: relative;

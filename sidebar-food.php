@@ -11,7 +11,7 @@
   <?php endwhile; ?>
   <?php
     $cat = get_category_by_slug('menus');
-    $categories = get_categories( array('child_of' => $cat->term_id, 'orderby' => 'id', 'order' => 'DESC') );
+    $categories = get_categories( array('child_of' => $cat->term_id, 'orderby' => 'slug', 'order' => 'DESC') );
     foreach($categories as $category): ?>
     <?php query_posts( array ( 'category_name' => $category->slug, 'posts_per_page' => 1 ) ); ?>
     <li>

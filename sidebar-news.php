@@ -9,7 +9,7 @@
 <ul>
   <?php
     $cat = get_category_by_slug('news');
-    $categories = get_categories( array('child_of' => $cat->term_id) );
+    $categories = get_categories( array('child_of' => $cat->term_id, 'orderby' => 'slug', 'order' => 'ASC') );
     foreach($categories as $category):?>
       <li>
         <!-- <a href="<?php echo get_category_link( $category->term_id ) ?>"><?php echo $category->name ?></a> -->

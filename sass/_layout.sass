@@ -1,9 +1,9 @@
 #wpadminbar
   display: none
 html
-  padding-top: 30px !important
+  padding-top: 40px !important
   +ns
-    padding-top: 43px !important
+    padding-top: 42px !important
 
 .container, .frames
   margin: 0 auto
@@ -22,9 +22,10 @@ html
   min-height: 45px
   line-height: 45px
   z-index: 9
+  .container
+    padding-right: 55px
   #site-title
     display: inline-block
-
   #menu-label
     padding: 5px
     float: right
@@ -59,7 +60,7 @@ html
       +transform(rotateX(0))
       li
         display: inline-block
-        margin-left: 60px
+        margin-left: 49px
 
 #sidebar
   min-width: 0
@@ -90,7 +91,7 @@ html
   position: relative
   overflow: auto
   padding: 20px
-  margin-bottom: 20px
+  margin-bottom: 40px
   +transition(height .3s)
   +ns
     border: 20px solid transparent
@@ -101,12 +102,21 @@ html
 
   article
     padding-top: 20px
-    margin-bottom: 50px
+    margin-bottom: 40px
     .symbol
       margin-bottom: 10px
+  .entry-date
+    margin-bottom: 26px
 
   img
     max-width: 100%
     height: auto
   .acf-map img
     max-width: none
+#footer
+  height: 80px
+  +ns
+    position: fixed
+    bottom: 0
+    left: 0
+    right: 0

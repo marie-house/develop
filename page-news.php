@@ -3,7 +3,7 @@
 <main id="content" role="main">
 <?php
   $cat = get_category_by_slug('news');
-  $categories = get_categories( array('child_of' => $cat->term_id) );
+  $categories = get_categories( array('child_of' => $cat->term_id, 'orderby' => 'slug', 'order' => 'ASC') );
   foreach($categories as $category): ?>
   <?php query_posts( array ( 'category_name' => $category->slug, 'posts_per_page' => 1 ) ); ?>
   <article id="<?php echo $category->slug ?>">

@@ -21,12 +21,17 @@ $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
   .frames
     position: relative
     width: 10px
-    margin: 0 auto
+    +ns
+      margin: 40px auto 0
   .frame
     position: absolute
     left: 0
     top: 0
     +transition( transform .5s)
+  #footer
+    display: none
+    +dt
+      display: block
 
 @each $pair in $frames
   $position: nth($pair, 2)
@@ -94,26 +99,32 @@ $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
 
 .page-food
   #features
+    padding-top: 16px
     h3
-      margin-top: 20px
+      margin-top: 65px
+    h2 + .symbol
+      width: 12px
+      margin: -5px auto 5px
   .meterials-list
     margin-bottom: 80px
     sub
-      font-size: .6em
-      margin: 10px
+      margin: 5px
       display: block
     img
       margin: 10px
     li
-      margin-top: 80px
+      margin-top: 46px
 
 .page-about
   #sidebar
-    .cover
-      width: 93%
     ul
-      margin-top: 4px
+      margin-top: 0px
+    +ns
+      .cover
+        width: 93%
+        margin-top: -5px
   #history
+    padding-top: 17px
     strong
       margin-top: 50px
       +ns
@@ -121,24 +132,34 @@ $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
 
 .page-food
   #sidebar
-    .cover
-      width: 93%
     ul
       margin-top: 8px
+    +ns
+      .cover
+        width: 93%
 
 .page-private-party
   #sidebar
-    .cover
-      width: 114%
-      margin-left: -5%
-      margin-top: 25px
     ul
       margin-top: 62px
-
+    +ns
+      .cover
+        width: 114%
+        margin-left: -5%
+        margin-top: 25px
+  #price
+    padding-top: 16px
+    .symbol
+      margin-bottom: 20px
+    h3
+      font-size: 1em
 .page-info
   #sidebar
     ul
       margin-top: 50px
+#informations
+  .brading-info
+    margin-bottom: 25px
 
 .page-news, .page-about, .page-food
   img
@@ -152,5 +173,3 @@ $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
       display: block
       br
         display: block
-
-
