@@ -26,6 +26,14 @@ $tablet: 1260px
   @media (max-width: $max)
     @content
 
+=minH( $min )
+  @media (min-height: $min + 1)
+    @content
+
+=maxH( $max )
+  @media (max-height: $max)
+    @content
+
 =between( $min, $max )
   @media (min-width: $min + 1) and (max-width: $max)
     @content

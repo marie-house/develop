@@ -11,7 +11,6 @@ $bg-colors : "efe7e4", "b2bc8e", "ccb4d6",        "93a1a2", "d6aea8", "dac9a2"
     body.page-#{$page}
       @content
 
-
 @for $i from 1 through length($pages)
   $page: nth( $pages, $i )
   $bg-color: unquote( nth( $bg-colors, $i) )
@@ -30,7 +29,7 @@ $bg-colors : "efe7e4", "b2bc8e", "ccb4d6",        "93a1a2", "d6aea8", "dac9a2"
 
     a
       &.active, &:hover
-        color: unquote("#{$bg-color}")
+        color: unquote("##{$bg-color}")
     #content
       h2
         background: url('images/title-#{$page}.png') center center no-repeat
@@ -40,11 +39,11 @@ $bg-colors : "efe7e4", "b2bc8e", "ccb4d6",        "93a1a2", "d6aea8", "dac9a2"
         background: url('images/side-hover-#{$page}-right.png') 90% center, url('images/side-hover-#{$page}-left.png') 10% center
         background-repeat: no-repeat
         +background-size(15px 19px, 15px 19px)
-
+        &.active a
+          color: unquote("##{$bg-color}")
     #footer
       background: url('images/wood-#{$page}.jpg') center top repeat-x
       +background-size(125px 80px)
-
     #background
       position: absolute
       top: 0

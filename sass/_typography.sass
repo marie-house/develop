@@ -1,8 +1,7 @@
-$didot: Didot, times, HiraMinProN-W3, serif
-$times: times, HiraMinProN-W3, serif
+$times: "times regular", times, "HiraMinProN-W3", "LiSungPro", STSong, serif
 
 body
-  font-family: $didot
+  font-family: $times
 p
   font-family: $times
 
@@ -27,6 +26,7 @@ p
   .entry-date
     font-size: 1.1em
     display: block
+    letter-spacing: .1em
   h2, strong
     font-size: 1.2em
     letter-spacing: 0.3em
@@ -55,6 +55,27 @@ p
     font-size: 0.7em
     margin: 10px
     letter-spacing: .1em
+  em
+    font-weight: bold
   // .innertext
   //   font-size: .8em
   //   line-height: 1.8em
+
+.page-private-party
+  #rule, #usage, #options
+    .innertext p
+      font-weight: bold
+.page-food
+  #features
+    .innertext, .meterials-list, .brief
+      p
+        font-weight: bold
+    sub
+      letter-spacing: .2em
+      font-weight: normal
+.page-news
+  #content .entry p
+    font-weight: bold
+.page-about
+  #content p
+    font-weight: bold

@@ -21,6 +21,7 @@ $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
   .frames
     position: relative
     width: 10px
+    min-height: 530px
     +ns
       margin: 40px auto 0
   .frame
@@ -56,6 +57,9 @@ $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
 
 
 .page-info
+  #sidebar
+    ul
+      margin-top: 50px
   .acf-map
     width: 100%
     height: 300px
@@ -65,7 +69,7 @@ $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
     +ns
       height: 400px
   #group
-    $width: 180px
+    $width: 220px
     $height: $width * 160 / 445
     ul
       margin-top: 30px
@@ -87,15 +91,27 @@ $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
         &::after
           display: none
       img
+        width: 80%
+        height: auto
         margin-bottom: 20px
       a
         display: inline-block
         background: url('images/group-item.png') 0 0 no-repeat
         line-height: 1.2em
-        padding-top: 15px
+        padding-top: 20px
         width: $width
         height: $height - 15px
+        letter-spacing: .2em
+        white-space: nowrap
+        font-weight: normal
+        text-transform: uppercase
         +background-size( $width $height )
+      .name
+        display: block
+        font-weight: bold
+      .eng-name
+        display: block
+        font-size: .8em
 
 .page-food
   #features
@@ -109,11 +125,12 @@ $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
     margin-bottom: 80px
     sub
       margin: 5px
+      margin-top: 8px
       display: block
     img
-      margin: 10px
+      margin: 20px auto !important
     li
-      margin-top: 46px
+      margin-top: 80px
 
 .page-about
   #sidebar
@@ -153,13 +170,14 @@ $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
       margin-bottom: 20px
     h3
       font-size: 1em
-.page-info
-  #sidebar
-    ul
-      margin-top: 50px
+
 #informations
   .brading-info
     margin-bottom: 25px
+
+.page-news
+  h2 + img
+    margin: 10px auto !important
 
 .page-news, .page-about, .page-food
   img

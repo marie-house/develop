@@ -1,12 +1,22 @@
 (function() {
 
   (function($) {
-    var $content, $maps, $sidebar, $window, add_marker, center_map, map_style, render_map, sidebarHeight;
+    var $articles, $body, $content, $frames, $header, $images, $maps, $menuItems, $sidebar, $window, add_marker, center_map, changeBackground, changeHeight, contentHeight, headerIn, map_style, pages, render_map, scrollSpy, sidebarHeight, xx;
+    xx = function(t) {
+      return console.log(t);
+    };
     $window = $(window);
+    $body = $('body');
+    $header = $('#header');
     $content = $('#content');
+    $articles = $content.find('> article');
     $sidebar = $('#sidebar');
+    $menuItems = $sidebar.find('li');
     $maps = $('.acf-map');
+    $frames = $('.frames');
+    $images = $('img');
     sidebarHeight = $sidebar.height();
+    contentHeight = 0;
     map_style = [
       {
         "stylers": [
@@ -22,6 +32,19 @@
         ]
       }
     ];
+    pages = ['about', 'private-party', 'info', 'news', 'food'];
+    headerIn = function() {
+      return $header.addClass('active');
+    };
+    changeBackground = function(e) {
+      var id, page, _i, _len;
+      id = $(e.currentTarget).attr('id').replace('frame-', '');
+      for (_i = 0, _len = pages.length; _i < _len; _i++) {
+        page = pages[_i];
+        $body.removeClass("page-" + page);
+      }
+      return $body.addClass("page-" + id);
+    };
     render_map = function($el) {
       var $markers, args, map;
       $markers = $el.find('.marker');
@@ -76,20 +99,36 @@
     $maps.each(function() {
       return render_map($(this));
     });
-    $window.on('resize', function() {
-      var fix, height, width;
+    changeHeight = function() {
+      var height, width;
       height = $window.height();
       width = $window.width();
-      fix = width < 600 ? 'auto' : height - 330;
-      if (fix < sidebarHeight - 80) {
-        fix = sidebarHeight - 80;
+      contentHeight = width < 600 ? 'auto' : height - 280;
+      if (contentHeight < sidebarHeight - 40) {
+        contentHeight = sidebarHeight - 40;
       }
-      return $content.css('height', fix);
-    });
-    $('img').on('dragstart', function(e) {
+      return $content.css('height', contentHeight);
+    };
+    scrollSpy = function() {
+      var $article, i, scrollTop, _i, _ref;
+      scrollTop = $content.scrollTop();
+      for (i = _i = 0, _ref = $articles.length; _i < _ref; i = _i += 1) {
+        $article = $articles.eq(i);
+        if ($article.position().top + $article.outerHeight() - contentHeight / 2 > 0 || i === $articles.length - 1) {
+          $menuItems.removeClass('active').eq(i).addClass('active');
+          return;
+        }
+      }
+    };
+    $window.on('resize', changeHeight);
+    $content.on('scroll', scrollSpy);
+    $frames.on('mouseover', 'a', changeBackground);
+    $images.on('dragstart', function(e) {
       return e.preventDefault();
     });
-    return $window.resize();
+    $window.resize();
+    scrollSpy();
+    return headerIn();
   })(jQuery);
 
 }).call(this);

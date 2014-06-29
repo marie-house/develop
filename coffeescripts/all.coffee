@@ -1,10 +1,20 @@
 (($) ->
-  $window  = $(window)
-  $content = $('#content')
-  $sidebar = $('#sidebar')
-  $maps    = $('.acf-map')
+  xx = (t) ->
+    console.log(t)
+
+  $window    = $(window)
+  $body      = $('body')
+  $header    = $('#header')
+  $content   = $('#content')
+  $articles  = $content.find('> article')
+  $sidebar   = $('#sidebar')
+  $menuItems = $sidebar.find('li')
+  $maps      = $('.acf-map')
+  $frames    = $('.frames')
+  $images    = $('img')
 
   sidebarHeight = $sidebar.height()
+  contentHeight = 0
 
   map_style = [
       "stylers": [
@@ -14,6 +24,20 @@
         { "gamma": 0.8 }
       ]
   ]
+
+  pages = ['about', 'private-party', 'info', 'news', 'food']
+
+  headerIn = -> $header.addClass 'active'
+
+  changeBackground = (e) ->
+    id = $(e.currentTarget).attr('id').replace('frame-', '')
+    for page in pages
+      $body.removeClass("page-#{page}")
+    $body.addClass("page-#{id}")
+
+  ############################################
+  # Map
+  ############################################
 
   render_map = ( $el ) ->
     $markers = $el.find('.marker')
@@ -63,14 +87,43 @@
 
   $maps.each -> render_map( $(@) )
 
-  $window.on 'resize', ->
+  ############################################
+  # Resize
+  ############################################
+
+  changeHeight = ->
     height = $window.height()
     width  = $window.width()
-    fix = if( width < 600 ) then 'auto' else height - 330
-    fix = sidebarHeight - 80 if fix < sidebarHeight - 80
-    $content.css 'height', fix
-  $('img').on 'dragstart', (e) ->
-    e.preventDefault()
+    contentHeight = if( width < 600 ) then 'auto' else height - 280
+    contentHeight = sidebarHeight - 40 if contentHeight < sidebarHeight - 40
+    $content.css 'height', contentHeight
 
-  $window.resize()
+  ############################################
+  # Scroll
+  ############################################
+
+  scrollSpy = ->
+    scrollTop = $content.scrollTop()
+    for i in [0...$articles.length] by 1
+      $article = $articles.eq(i)
+      if $article.position().top + $article.outerHeight() - contentHeight/2 > 0 || i == $articles.length - 1
+        $menuItems.removeClass('active').eq(i).addClass('active')
+        return
+
+  ############################################
+  # Binding
+  ############################################
+
+  $window.on 'resize', changeHeight
+  $content.on 'scroll', scrollSpy
+  $frames.on 'mouseover', 'a', changeBackground
+  $images.on 'dragstart', (e) -> e.preventDefault()
+
+  ############################################
+  # Init
+  ############################################
+
+  do $window.resize
+  do scrollSpy
+  do headerIn
 )(jQuery)

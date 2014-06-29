@@ -47,8 +47,8 @@ endif;
         <li>
           <img src="<?php echo $cover['url'] ?>" alt="<?php echo $name ?>">
           <a href="<?php echo $link ?>" target="_blank">
-            <?php echo $name ?><br>
-            <?php echo $english_name ?>
+            <span class="name"><?php echo $name ?></span>
+            <span class="eng-name"><?php echo $english_name ?></span>
           </a>
         </li>
       <?php endwhile; ?>

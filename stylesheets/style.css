@@ -59,11 +59,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 html {
-  padding-top: 40px !important;
+  padding-top: 70px !important;
 }
 @media (min-width: 601px) {
   html {
-    padding-top: 42px !important;
+    padding-top: 72px !important;
   }
 }
 
@@ -90,6 +90,22 @@ html {
   min-height: 45px;
   line-height: 45px;
   z-index: 9;
+  -webkit-transform: translateY(-45px);
+  -moz-transform: translateY(-45px);
+  -ms-transform: translateY(-45px);
+  -o-transform: translateY(-45px);
+  transform: translateY(-45px);
+  -webkit-transition: 1.5s;
+  -moz-transition: 1.5s;
+  -o-transition: 1.5s;
+  transition: 1.5s;
+}
+#header.active {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
 }
 #header .container {
   padding-right: 55px;
@@ -193,6 +209,10 @@ html {
   }
 }
 
+#container {
+  min-height: 450px;
+}
+
 #content {
   display: block;
   position: relative;
@@ -234,7 +254,7 @@ html {
 #footer {
   height: 80px;
 }
-@media (min-width: 601px) {
+@media (min-width: 601px) and (min-height: 701px) {
   #footer {
     position: fixed;
     bottom: 0;
@@ -244,11 +264,11 @@ html {
 }
 
 body {
-  font-family: Didot, times, HiraMinProN-W3, serif;
+  font-family: "times regular", times, "HiraMinProN-W3", "LiSungPro", STSong, serif;
 }
 
 p {
-  font-family: times, HiraMinProN-W3, serif;
+  font-family: "times regular", times, "HiraMinProN-W3", "LiSungPro", STSong, serif;
 }
 
 #header h1 {
@@ -274,6 +294,7 @@ p {
 #content .entry-date {
   font-size: 1.1em;
   display: block;
+  letter-spacing: 0.1em;
 }
 #content h2, #content strong {
   font-size: 1.2em;
@@ -310,6 +331,29 @@ p {
   margin: 10px;
   letter-spacing: 0.1em;
 }
+#content em {
+  font-weight: bold;
+}
+
+.page-private-party #rule .innertext p, .page-private-party #usage .innertext p, .page-private-party #options .innertext p {
+  font-weight: bold;
+}
+
+.page-food #features .innertext p, .page-food #features .meterials-list p, .page-food #features .brief p {
+  font-weight: bold;
+}
+.page-food #features sub {
+  letter-spacing: 0.2em;
+  font-weight: normal;
+}
+
+.page-news #content .entry p {
+  font-weight: bold;
+}
+
+.page-about #content p {
+  font-weight: bold;
+}
 
 body.page-home {
   background: url("images/wall-home.jpg") #efe7e4;
@@ -319,7 +363,7 @@ body.page-home {
   background-size: 500px 500px;
 }
 body.page-home a.active, body.page-home a:hover {
-  color: efe7e4;
+  color: #efe7e4;
 }
 body.page-home #content h2 {
   background: url("images/title-home.png") center center no-repeat;
@@ -335,6 +379,9 @@ body.page-home #sidebar li {
   -moz-background-size: 15px 19px, 15px 19px;
   -o-background-size: 15px 19px, 15px 19px;
   background-size: 15px 19px, 15px 19px;
+}
+body.page-home #sidebar li.active a {
+  color: #efe7e4;
 }
 body.page-home #footer {
   background: url("images/wood-home.jpg") center top repeat-x;
@@ -368,7 +415,7 @@ body.page-about {
   background-size: 200px 300px;
 }
 body.page-about a.active, body.page-about a:hover {
-  color: b2bc8e;
+  color: #b2bc8e;
 }
 body.page-about #content h2 {
   background: url("images/title-about.png") center center no-repeat;
@@ -384,6 +431,9 @@ body.page-about #sidebar li {
   -moz-background-size: 15px 19px, 15px 19px;
   -o-background-size: 15px 19px, 15px 19px;
   background-size: 15px 19px, 15px 19px;
+}
+body.page-about #sidebar li.active a {
+  color: #b2bc8e;
 }
 body.page-about #footer {
   background: url("images/wood-about.jpg") center top repeat-x;
@@ -417,7 +467,7 @@ body.page-private-party {
   background-size: 500px 692px;
 }
 body.page-private-party a.active, body.page-private-party a:hover {
-  color: ccb4d6;
+  color: #ccb4d6;
 }
 body.page-private-party #content h2 {
   background: url("images/title-private-party.png") center center no-repeat;
@@ -433,6 +483,9 @@ body.page-private-party #sidebar li {
   -moz-background-size: 15px 19px, 15px 19px;
   -o-background-size: 15px 19px, 15px 19px;
   background-size: 15px 19px, 15px 19px;
+}
+body.page-private-party #sidebar li.active a {
+  color: #ccb4d6;
 }
 body.page-private-party #footer {
   background: url("images/wood-private-party.jpg") center top repeat-x;
@@ -466,7 +519,7 @@ body.page-info {
   background-size: 200px 300px;
 }
 body.page-info a.active, body.page-info a:hover {
-  color: 93a1a2;
+  color: #93a1a2;
 }
 body.page-info #content h2 {
   background: url("images/title-info.png") center center no-repeat;
@@ -482,6 +535,9 @@ body.page-info #sidebar li {
   -moz-background-size: 15px 19px, 15px 19px;
   -o-background-size: 15px 19px, 15px 19px;
   background-size: 15px 19px, 15px 19px;
+}
+body.page-info #sidebar li.active a {
+  color: #93a1a2;
 }
 body.page-info #footer {
   background: url("images/wood-info.jpg") center top repeat-x;
@@ -515,7 +571,7 @@ body.page-news, body.category {
   background-size: 200px 300px;
 }
 body.page-news a.active, body.page-news a:hover, body.category a.active, body.category a:hover {
-  color: d6aea8;
+  color: #d6aea8;
 }
 body.page-news #content h2, body.category #content h2 {
   background: url("images/title-news.png") center center no-repeat;
@@ -531,6 +587,9 @@ body.page-news #sidebar li, body.category #sidebar li {
   -moz-background-size: 15px 19px, 15px 19px;
   -o-background-size: 15px 19px, 15px 19px;
   background-size: 15px 19px, 15px 19px;
+}
+body.page-news #sidebar li.active a, body.category #sidebar li.active a {
+  color: #d6aea8;
 }
 body.page-news #footer, body.category #footer {
   background: url("images/wood-news.jpg") center top repeat-x;
@@ -564,7 +623,7 @@ body.page-food {
   background-size: 239px 347px;
 }
 body.page-food a.active, body.page-food a:hover {
-  color: dac9a2;
+  color: #dac9a2;
 }
 body.page-food #content h2 {
   background: url("images/title-food.png") center center no-repeat;
@@ -580,6 +639,9 @@ body.page-food #sidebar li {
   -moz-background-size: 15px 19px, 15px 19px;
   -o-background-size: 15px 19px, 15px 19px;
   background-size: 15px 19px, 15px 19px;
+}
+body.page-food #sidebar li.active a {
+  color: #dac9a2;
 }
 body.page-food #footer {
   background: url("images/wood-food.jpg") center top repeat-x;
@@ -655,6 +717,7 @@ a {
 .page-home .frames {
   position: relative;
   width: 10px;
+  min-height: 530px;
 }
 @media (min-width: 601px) {
   .page-home .frames {
@@ -1034,6 +1097,9 @@ a {
     transform: translate(-60px, 1090px);
   }
 }
+.page-info #sidebar ul {
+  margin-top: 50px;
+}
 .page-info .acf-map {
   width: 100%;
   height: 300px;
@@ -1050,7 +1116,7 @@ a {
   margin-top: 30px;
 }
 .page-info #group li {
-  width: 180px;
+  width: 220px;
   margin: 0 auto;
   margin-bottom: 40px;
   position: relative;
@@ -1074,19 +1140,33 @@ a {
   }
 }
 .page-info #group li img {
+  width: 80%;
+  height: auto;
   margin-bottom: 20px;
 }
 .page-info #group li a {
   display: inline-block;
   background: url("images/group-item.png") 0 0 no-repeat;
   line-height: 1.2em;
-  padding-top: 15px;
-  width: 180px;
-  height: 49.7191px;
-  -webkit-background-size: 180px 64.7191px;
-  -moz-background-size: 180px 64.7191px;
-  -o-background-size: 180px 64.7191px;
-  background-size: 180px 64.7191px;
+  padding-top: 20px;
+  width: 220px;
+  height: 64.10112px;
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+  font-weight: normal;
+  text-transform: uppercase;
+  -webkit-background-size: 220px 79.10112px;
+  -moz-background-size: 220px 79.10112px;
+  -o-background-size: 220px 79.10112px;
+  background-size: 220px 79.10112px;
+}
+.page-info #group li .name {
+  display: block;
+  font-weight: bold;
+}
+.page-info #group li .eng-name {
+  display: block;
+  font-size: 0.8em;
 }
 
 .page-food #features {
@@ -1104,13 +1184,14 @@ a {
 }
 .page-food .meterials-list sub {
   margin: 5px;
+  margin-top: 8px;
   display: block;
 }
 .page-food .meterials-list img {
-  margin: 10px;
+  margin: 20px auto !important;
 }
 .page-food .meterials-list li {
-  margin-top: 46px;
+  margin-top: 80px;
 }
 
 .page-about #sidebar ul {
@@ -1163,12 +1244,12 @@ a {
   font-size: 1em;
 }
 
-.page-info #sidebar ul {
-  margin-top: 50px;
-}
-
 #informations .brading-info {
   margin-bottom: 25px;
+}
+
+.page-news h2 + img {
+  margin: 10px auto !important;
 }
 
 .page-news img, .page-about img, .page-food img {
@@ -1306,6 +1387,9 @@ a {
   -moz-background-size: 100% 100%;
   -o-background-size: 100% 100%;
   background-size: 100% 100%;
+}
+#sidebar li.active a {
+  background: transparent;
 }
 #sidebar a {
   font-weight: bold;

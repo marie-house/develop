@@ -35,9 +35,9 @@ if( have_rows('features') ):
     </ul>
     <? endif; ?>
   </section>
-  <p>
+  <div class="brief">
     <?php the_sub_field('brief');?>
-  </p>
+  </div>
 </article>
 <?php
   endwhile;
