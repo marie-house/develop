@@ -30,11 +30,23 @@ p
   h2, strong
     font-size: 1.2em
     letter-spacing: 0.3em
+    &:before
+      content: ''
+      width: .3em
+      height: 10px
+      display: inline-block
+  .innertext
+    br
+      display: none
+      +ns
+        display: block
   p
     font-size: 0.8em
     line-height: 2.15em
     letter-spacing: 0.2em
-    font-weight: normal
+    display: inline
+    +ns
+      display: block
   strong
     font-size: 1.65em
     display: block
@@ -44,7 +56,12 @@ p
     margin-bottom: 5px
     font-weight: bold
     font-size: 1.3em
-    letter-spacing: .32em
+    letter-spacing: .1em
+    line-height: 1.3em
+    font-size: 18px
+    +ns
+      font-size: 21px
+      letter-spacing: .32em
   h4
     font-size: 1.2em
     letter-spacing: .3em

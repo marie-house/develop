@@ -1,7 +1,7 @@
 (function() {
 
   (function($) {
-    var $articles, $body, $content, $frames, $header, $images, $maps, $menuItems, $sidebar, $window, add_marker, center_map, changeBackground, changeHeight, contentHeight, headerIn, map_style, pages, render_map, scrollSpy, sidebarHeight, xx;
+    var $articles, $body, $content, $frames, $header, $images, $maps, $menuItems, $sidebar, $window, add_marker, center_map, changeBackground, changeHeight, contentHeight, headerIn, height, isMobile, map_style, pages, render_map, scrollSpy, sidebarHeight, width, xx;
     xx = function(t) {
       return console.log(t);
     };
@@ -15,6 +15,9 @@
     $maps = $('.acf-map');
     $frames = $('.frames');
     $images = $('img');
+    height = 0;
+    width = 0;
+    isMobile = false;
     sidebarHeight = $sidebar.height();
     contentHeight = 0;
     map_style = [
@@ -54,7 +57,7 @@
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         scrollwheel: false,
         disableDoubleClickZoom: true,
-        draggable: false,
+        draggable: !isMobile,
         styles: map_style
       };
       map = new google.maps.Map($el[0], args);
@@ -96,14 +99,11 @@
         return map.fitBounds(bounds);
       }
     };
-    $maps.each(function() {
-      return render_map($(this));
-    });
     changeHeight = function() {
-      var height, width;
       height = $window.height();
       width = $window.width();
-      contentHeight = width < 600 ? 'auto' : height - 280;
+      isMobile = width < 600;
+      contentHeight = isMobile ? 'auto' : height - 280;
       if (contentHeight < sidebarHeight - 40) {
         contentHeight = sidebarHeight - 40;
       }
@@ -128,7 +128,12 @@
     });
     $window.resize();
     scrollSpy();
-    return headerIn();
+    headerIn();
+    return $maps.each(function() {
+      if ($maps.length) {
+        return render_map($(this));
+      }
+    });
   })(jQuery);
 
 }).call(this);

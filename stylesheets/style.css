@@ -107,11 +107,15 @@ html {
   -o-transform: translateY(0);
   transform: translateY(0);
 }
-#header .container {
-  padding-right: 55px;
+@media (min-width: 601px) {
+  #header .container {
+    padding-right: 55px;
+  }
 }
 #header #site-title {
   display: inline-block;
+  position: relative;
+  left: -2px;
 }
 #header #menu-label {
   padding: 5px;
@@ -300,11 +304,30 @@ p {
   font-size: 1.2em;
   letter-spacing: 0.3em;
 }
+#content h2:before, #content strong:before {
+  content: "";
+  width: 0.3em;
+  height: 10px;
+  display: inline-block;
+}
+#content .innertext br {
+  display: none;
+}
+@media (min-width: 601px) {
+  #content .innertext br {
+    display: block;
+  }
+}
 #content p {
   font-size: 0.8em;
   line-height: 2.15em;
   letter-spacing: 0.2em;
-  font-weight: normal;
+  display: inline;
+}
+@media (min-width: 601px) {
+  #content p {
+    display: block;
+  }
 }
 #content strong {
   font-size: 1.65em;
@@ -316,7 +339,15 @@ p {
   margin-bottom: 5px;
   font-weight: bold;
   font-size: 1.3em;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.1em;
+  line-height: 1.3em;
+  font-size: 18px;
+}
+@media (min-width: 601px) {
+  #content h3 {
+    font-size: 21px;
+    letter-spacing: 0.32em;
+  }
 }
 #content h4 {
   font-size: 1.2em;
@@ -365,13 +396,6 @@ body.page-home {
 body.page-home a.active, body.page-home a:hover {
   color: #efe7e4;
 }
-body.page-home #content h2 {
-  background: url("images/title-home.png") center center no-repeat;
-  -webkit-background-size: 450px 47px;
-  -moz-background-size: 450px 47px;
-  -o-background-size: 450px 47px;
-  background-size: 450px 47px;
-}
 body.page-home #sidebar li {
   background: url("images/side-hover-home-right.png") 90% center, url("images/side-hover-home-left.png") 10% center;
   background-repeat: no-repeat;
@@ -385,10 +409,10 @@ body.page-home #sidebar li.active a {
 }
 body.page-home #footer {
   background: url("images/wood-home.jpg") center top repeat-x;
-  -webkit-background-size: 125px 80px;
-  -moz-background-size: 125px 80px;
-  -o-background-size: 125px 80px;
-  background-size: 125px 80px;
+  -webkit-background-size: 187px 120px;
+  -moz-background-size: 187px 120px;
+  -o-background-size: 187px 120px;
+  background-size: 187px 120px;
 }
 body.page-home #background {
   position: absolute;
@@ -418,11 +442,13 @@ body.page-about a.active, body.page-about a:hover {
   color: #b2bc8e;
 }
 body.page-about #content h2 {
-  background: url("images/title-about.png") center center no-repeat;
-  -webkit-background-size: 450px 47px;
-  -moz-background-size: 450px 47px;
-  -o-background-size: 450px 47px;
-  background-size: 450px 47px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: url("images/title-about-left.png") left center no-repeat, url("images/title-about-right.png") right center no-repeat;
+  -webkit-background-size: 25% auto;
+  -moz-background-size: 25% auto;
+  -o-background-size: 25% auto;
+  background-size: 25% auto;
 }
 body.page-about #sidebar li {
   background: url("images/side-hover-about-right.png") 90% center, url("images/side-hover-about-left.png") 10% center;
@@ -437,10 +463,10 @@ body.page-about #sidebar li.active a {
 }
 body.page-about #footer {
   background: url("images/wood-about.jpg") center top repeat-x;
-  -webkit-background-size: 125px 80px;
-  -moz-background-size: 125px 80px;
-  -o-background-size: 125px 80px;
-  background-size: 125px 80px;
+  -webkit-background-size: 187px 120px;
+  -moz-background-size: 187px 120px;
+  -o-background-size: 187px 120px;
+  background-size: 187px 120px;
 }
 body.page-about #background {
   position: absolute;
@@ -470,11 +496,13 @@ body.page-private-party a.active, body.page-private-party a:hover {
   color: #ccb4d6;
 }
 body.page-private-party #content h2 {
-  background: url("images/title-private-party.png") center center no-repeat;
-  -webkit-background-size: 450px 47px;
-  -moz-background-size: 450px 47px;
-  -o-background-size: 450px 47px;
-  background-size: 450px 47px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: url("images/title-private-party-left.png") left center no-repeat, url("images/title-private-party-right.png") right center no-repeat;
+  -webkit-background-size: 25% auto;
+  -moz-background-size: 25% auto;
+  -o-background-size: 25% auto;
+  background-size: 25% auto;
 }
 body.page-private-party #sidebar li {
   background: url("images/side-hover-private-party-right.png") 90% center, url("images/side-hover-private-party-left.png") 10% center;
@@ -489,10 +517,10 @@ body.page-private-party #sidebar li.active a {
 }
 body.page-private-party #footer {
   background: url("images/wood-private-party.jpg") center top repeat-x;
-  -webkit-background-size: 125px 80px;
-  -moz-background-size: 125px 80px;
-  -o-background-size: 125px 80px;
-  background-size: 125px 80px;
+  -webkit-background-size: 187px 120px;
+  -moz-background-size: 187px 120px;
+  -o-background-size: 187px 120px;
+  background-size: 187px 120px;
 }
 body.page-private-party #background {
   position: absolute;
@@ -522,11 +550,13 @@ body.page-info a.active, body.page-info a:hover {
   color: #93a1a2;
 }
 body.page-info #content h2 {
-  background: url("images/title-info.png") center center no-repeat;
-  -webkit-background-size: 450px 47px;
-  -moz-background-size: 450px 47px;
-  -o-background-size: 450px 47px;
-  background-size: 450px 47px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: url("images/title-info-left.png") left center no-repeat, url("images/title-info-right.png") right center no-repeat;
+  -webkit-background-size: 25% auto;
+  -moz-background-size: 25% auto;
+  -o-background-size: 25% auto;
+  background-size: 25% auto;
 }
 body.page-info #sidebar li {
   background: url("images/side-hover-info-right.png") 90% center, url("images/side-hover-info-left.png") 10% center;
@@ -541,10 +571,10 @@ body.page-info #sidebar li.active a {
 }
 body.page-info #footer {
   background: url("images/wood-info.jpg") center top repeat-x;
-  -webkit-background-size: 125px 80px;
-  -moz-background-size: 125px 80px;
-  -o-background-size: 125px 80px;
-  background-size: 125px 80px;
+  -webkit-background-size: 187px 120px;
+  -moz-background-size: 187px 120px;
+  -o-background-size: 187px 120px;
+  background-size: 187px 120px;
 }
 body.page-info #background {
   position: absolute;
@@ -574,11 +604,13 @@ body.page-news a.active, body.page-news a:hover, body.category a.active, body.ca
   color: #d6aea8;
 }
 body.page-news #content h2, body.category #content h2 {
-  background: url("images/title-news.png") center center no-repeat;
-  -webkit-background-size: 450px 47px;
-  -moz-background-size: 450px 47px;
-  -o-background-size: 450px 47px;
-  background-size: 450px 47px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: url("images/title-news-left.png") left center no-repeat, url("images/title-news-right.png") right center no-repeat;
+  -webkit-background-size: 25% auto;
+  -moz-background-size: 25% auto;
+  -o-background-size: 25% auto;
+  background-size: 25% auto;
 }
 body.page-news #sidebar li, body.category #sidebar li {
   background: url("images/side-hover-news-right.png") 90% center, url("images/side-hover-news-left.png") 10% center;
@@ -593,10 +625,10 @@ body.page-news #sidebar li.active a, body.category #sidebar li.active a {
 }
 body.page-news #footer, body.category #footer {
   background: url("images/wood-news.jpg") center top repeat-x;
-  -webkit-background-size: 125px 80px;
-  -moz-background-size: 125px 80px;
-  -o-background-size: 125px 80px;
-  background-size: 125px 80px;
+  -webkit-background-size: 187px 120px;
+  -moz-background-size: 187px 120px;
+  -o-background-size: 187px 120px;
+  background-size: 187px 120px;
 }
 body.page-news #background, body.category #background {
   position: absolute;
@@ -626,11 +658,13 @@ body.page-food a.active, body.page-food a:hover {
   color: #dac9a2;
 }
 body.page-food #content h2 {
-  background: url("images/title-food.png") center center no-repeat;
-  -webkit-background-size: 450px 47px;
-  -moz-background-size: 450px 47px;
-  -o-background-size: 450px 47px;
-  background-size: 450px 47px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: url("images/title-food-left.png") left center no-repeat, url("images/title-food-right.png") right center no-repeat;
+  -webkit-background-size: 25% auto;
+  -moz-background-size: 25% auto;
+  -o-background-size: 25% auto;
+  background-size: 25% auto;
 }
 body.page-food #sidebar li {
   background: url("images/side-hover-food-right.png") 90% center, url("images/side-hover-food-left.png") 10% center;
@@ -645,10 +679,10 @@ body.page-food #sidebar li.active a {
 }
 body.page-food #footer {
   background: url("images/wood-food.jpg") center top repeat-x;
-  -webkit-background-size: 125px 80px;
-  -moz-background-size: 125px 80px;
-  -o-background-size: 125px 80px;
-  background-size: 125px 80px;
+  -webkit-background-size: 187px 120px;
+  -moz-background-size: 187px 120px;
+  -o-background-size: 187px 120px;
+  background-size: 187px 120px;
 }
 body.page-food #background {
   position: absolute;
@@ -1223,6 +1257,9 @@ a {
     width: 93%;
   }
 }
+.page-food .meterials-list li:last-child br {
+  display: block;
+}
 
 .page-private-party #sidebar ul {
   margin-top: 62px;
@@ -1243,9 +1280,23 @@ a {
 .page-private-party #price h3 {
   font-size: 1em;
 }
+.page-private-party #content #rule p {
+  display: inline;
+}
+@media (min-width: 601px) {
+  .page-private-party #content #rule p {
+    display: block;
+  }
+}
+.page-private-party #content p {
+  display: block;
+}
 
 #informations .brading-info {
   margin-bottom: 25px;
+}
+#informations p {
+  display: block;
 }
 
 .page-news h2 + img {

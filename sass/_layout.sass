@@ -26,10 +26,13 @@ html
   +transition( 1.5s )
   &.active
     +transform( translateY( 0 ) )
-  .container
-    padding-right: 55px
+  +ns
+    .container
+      padding-right: 55px
   #site-title
     display: inline-block
+    position: relative
+    left: -2px
   #menu-label
     padding: 5px
     float: right

@@ -13,6 +13,10 @@
   $frames    = $('.frames')
   $images    = $('img')
 
+  height   = 0
+  width    = 0
+  isMobile = false
+
   sidebarHeight = $sidebar.height()
   contentHeight = 0
 
@@ -41,14 +45,13 @@
 
   render_map = ( $el ) ->
     $markers = $el.find('.marker')
-
     args =
       zoom                   : 16
       center                 : new google.maps.LatLng(0, 0)
       mapTypeId              : google.maps.MapTypeId.ROADMAP
       scrollwheel            : false
       disableDoubleClickZoom : true
-      draggable              : false
+      draggable              : !isMobile
       styles                 : map_style
 
     map = new google.maps.Map($el[0], args)
@@ -85,8 +88,6 @@
     else
       map.fitBounds( bounds )
 
-  $maps.each -> render_map( $(@) )
-
   ############################################
   # Resize
   ############################################
@@ -94,7 +95,8 @@
   changeHeight = ->
     height = $window.height()
     width  = $window.width()
-    contentHeight = if( width < 600 ) then 'auto' else height - 280
+    isMobile = width < 600
+    contentHeight = if isMobile then 'auto' else height - 280
     contentHeight = sidebarHeight - 40 if contentHeight < sidebarHeight - 40
     $content.css 'height', contentHeight
 
@@ -126,4 +128,5 @@
   do $window.resize
   do scrollSpy
   do headerIn
+  $maps.each -> render_map( $(@) ) if $maps.length
 )(jQuery)
