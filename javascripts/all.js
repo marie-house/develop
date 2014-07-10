@@ -1,13 +1,17 @@
 (function() {
 
   (function($) {
-    var $articles, $body, $content, $frames, $header, $images, $maps, $menuItems, $sidebar, $window, add_marker, center_map, changeBackground, changeHeight, contentHeight, headerIn, height, isMobile, map_style, pages, render_map, scrollSpy, sidebarHeight, width, xx;
+    var $articles, $body, $content, $frames, $header, $html, $images, $mainMenu, $maps, $menuItems, $menuToggler, $sidebar, $subMenu, $window, add_marker, center_map, changeBackground, changeHeight, contentHeight, debug, headerIn, height, isMobile, map_style, openMenu, pages, render_map, scrollSpy, sidebarHeight, width, xx;
     xx = function(t) {
       return console.log(t);
     };
     $window = $(window);
+    $html = $('html');
     $body = $('body');
     $header = $('#header');
+    $mainMenu = $header.find('#menu-main-menu');
+    $subMenu = $header.find('.sub-menu');
+    $menuToggler = $header.find('#menu-toggler');
     $content = $('#content');
     $articles = $content.find('> article');
     $sidebar = $('#sidebar');
@@ -24,13 +28,34 @@
       {
         "stylers": [
           {
-            "saturation": -33
+            "hue": "#00c3ff"
           }, {
-            "hue": "#00aadd"
+            "lightness": -4
           }, {
-            "lightness": -3
-          }, {
-            "gamma": 0.8
+            "gamma": 0.89
+          }
+        ]
+      }, {
+        "featureType": "road",
+        "elementType": "geometry.stroke",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+        ]
+      }, {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+          {
+            "saturation": -81
+          }
+        ]
+      }, {
+        "featureType": "water",
+        "stylers": [
+          {
+            "saturation": -70
           }
         ]
       }
@@ -38,6 +63,12 @@
     pages = ['about', 'private-party', 'info', 'news', 'food'];
     headerIn = function() {
       return $header.addClass('active');
+    };
+    openMenu = function() {
+      var isOpen;
+      isOpen = $(this).is(':checked');
+      $html.toggleClass('menu-open');
+      return $mainMenu.height(height - 100);
     };
     changeBackground = function(e) {
       var id, page, _i, _len;
@@ -47,6 +78,12 @@
         $body.removeClass("page-" + page);
       }
       return $body.addClass("page-" + id);
+    };
+    debug = function(e) {
+      if (e.which !== 192) {
+        return;
+      }
+      return $('#background').toggleClass('debug');
     };
     render_map = function($el) {
       var $markers, args, map;
@@ -125,6 +162,11 @@
     $frames.on('mouseover', 'a', changeBackground);
     $images.on('dragstart', function(e) {
       return e.preventDefault();
+    });
+    $window.on('keydown', debug);
+    $menuToggler.on('change', openMenu);
+    $subMenu.on('click', 'a', function() {
+      return $menuToggler.trigger('click');
     });
     $window.resize();
     scrollSpy();

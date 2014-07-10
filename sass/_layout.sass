@@ -4,6 +4,8 @@ html
   padding-top: 30 + 40px !important
   +ns
     padding-top: 30 + 42px !important
+  &.menu-open
+    overflow: hidden
 
 .container, .frames
   margin: 0 auto
@@ -48,8 +50,10 @@ html
     top: -99999px
     &:checked
       + #menu
+        height: 900px
         margin-top: 30px
-        height: 500px
+        #menu-main-menu
+          overflow: auto
         +dt
           margin-top: 0
           height: auto
@@ -59,15 +63,22 @@ html
     height: 0
     +transform(rotateX(90deg))
     +transition( .5s )
+
+    .sub-menu
+      padding-left: 20px
+      +dt
+        display: none
     a
       display: block
     +dt
       display: inline-block
       float: right
+      position: relative
+      right: -4px
       +transform(rotateX(0))
       li
         display: inline-block
-        margin-left: 49px
+        margin-left: 43px
 
 #sidebar
   min-width: 0

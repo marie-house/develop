@@ -11,10 +11,10 @@
   <?php endwhile; ?>
   <?php
     $cat = get_category_by_slug('menus');
-    $categories = get_categories( array('child_of' => $cat->term_id, 'orderby' => 'slug', 'order' => 'DESC') );
+    $categories = get_categories( array('child_of' => $cat->term_id, 'orderby' => 'id', 'order' => 'ASC') );
     foreach($categories as $category): ?>
-    <?php query_posts( array ( 'category_name' => $category->slug, 'posts_per_page' => 1 ) ); ?>
-    <li>
+    <?php query_posts( array ( 'category_name' => $category->slug ) ); ?>
+    <li class="li-<?php echo $category->slug ?>">
       <a href="#<?php echo $category->slug ?>"><?php single_cat_title(); ?></a>
     </li>
   <?php endforeach ?>

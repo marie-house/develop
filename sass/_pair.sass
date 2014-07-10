@@ -2,7 +2,8 @@ $pages     : "home",   "about",  "private-party", "info",   "news",   "food"
 $bg-colors : "efe7e4", "b2bc8e", "ccb4d6",        "93a1a2", "d6aea8", "dac9a2"
 
 
-$title-sizes: null, (215px 96px), (211px 75px), (294px 96px), (302px 71px), (224px 95px)
+$title-sizes:  null,   21%,   24%,   27%,   26%,   28%
+$title-widths: null, 460px, 448px, 415px, 480px, 490px
 
 =select( $page )
   @if $page == "news"
@@ -16,6 +17,7 @@ $title-sizes: null, (215px 96px), (211px 75px), (294px 96px), (302px 71px), (224
   $page: nth( $pages, $i )
   $bg-color: unquote( nth( $bg-colors, $i) )
   $title-size: nth($title-sizes, $i)
+  $title-width: nth($title-widths, $i)
   $bg-size: 200px 300px
 
   @if $page == "home"
@@ -23,10 +25,10 @@ $title-sizes: null, (215px 96px), (211px 75px), (294px 96px), (302px 71px), (224
   @if $page == "private-party"
     $bg-size: 500px 692px
   @if $page == "food"
-    $bg-size: 239px 347px
+    $bg-size: 239px * .7 347px * .7
 
   +select( "#{$page}" )
-    background: url('images/wall-#{$page}.jpg') unquote("##{$bg-color}")
+    background: url('images/wall-#{$page}.jpg') unquote("##{$bg-color}") center
     +background-size($bg-size)
 
     a
@@ -35,14 +37,11 @@ $title-sizes: null, (215px 96px), (211px 75px), (294px 96px), (302px 71px), (224
     @if $page != "home"
       #content
         h2
-          max-width: 600px
+          max-width: $title-width
           margin: 0 auto
+          line-height: 65px
           background: url('images/title-#{$page}-left.png') left center no-repeat, url('images/title-#{$page}-right.png') right center no-repeat
-          $img-width: nth($title-size, 1) * 0.5
-          $img-height: nth($title-size, 2) * 0.5
-          +background-size( 25% auto)
-        // +ns
-        //   +background-size(450px 47px)
+          +background-size( $title-size auto)
     #sidebar
       li
         background: url('images/side-hover-#{$page}-right.png') 90% center, url('images/side-hover-#{$page}-left.png') 10% center
@@ -60,8 +59,10 @@ $title-sizes: null, (215px 96px), (211px 75px), (294px 96px), (302px 71px), (224
       bottom: 0
       right: 0
       z-index: 100
-      opacity: 0.5
+      opacity: 1
       pointer-events: none
       background: url('images/bg-#{$page}.jpg')
       +background-size(1920px * 1440/1920  1040px * 1440/1920)
       display: none
+      &.debug
+        display: block

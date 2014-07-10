@@ -12,7 +12,7 @@ if( have_rows('paragraph') ):
     $symbol = get_sub_field('symbol');
     if( $symbol ) {
   ?>
-  <img class="symbol" src="<?php echo $symbol['url'] ?>" width="<?php echo $symbol['width']/2 ?>" height="<?php echo $symbol['height']/2 ?>">
+  <img class="symbol symbol-<?php the_sub_field('slug'); ?>" src="<?php echo $symbol['url'] ?>" width="<?php echo $symbol['width']/2 ?>" height="<?php echo $symbol['height']/2 ?>">
   <?php }?>
   <div class="innertext"><?php the_sub_field('innertext');?></div>
 </article>
@@ -27,7 +27,7 @@ endif;
     <h2 class="article-title">地圖</h2>
     <div class="acf-map">
       <div class="marker" data-lat="<?php echo $map['lat']; ?>" data-lng="<?php echo $map['lng']; ?>">
-        <h4>瑪麗洋房</h4>
+        <h4>瑪莉洋房</h4>
         <p class="address"><?php echo $map['address']; ?></p>
       </div>
     </div>
@@ -39,7 +39,7 @@ endif;
     <h2 class="article-title">關係企業</h2>
     <ul>
       <?php while( have_rows('group') ) : the_row();
-        $link         = get_sub_field('link');
+        $link         = get_sub_field('url');
         $cover        = get_sub_field('cover');
         $name         = get_sub_field('name');
         $english_name = get_sub_field('english_name');

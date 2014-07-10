@@ -66,6 +66,9 @@ html {
     padding-top: 72px !important;
   }
 }
+html.menu-open {
+  overflow: hidden;
+}
 
 .container, .frames {
   margin: 0 auto;
@@ -135,13 +138,16 @@ html {
   top: -99999px;
 }
 #header #menu-toggler:checked + #menu {
+  height: 900px;
   margin-top: 30px;
-  height: 500px;
   -webkit-transform: rotateX(0);
   -moz-transform: rotateX(0);
   -ms-transform: rotateX(0);
   -o-transform: rotateX(0);
   transform: rotateX(0);
+}
+#header #menu-toggler:checked + #menu #menu-main-menu {
+  overflow: auto;
 }
 @media (min-width: 1261px) {
   #header #menu-toggler:checked + #menu {
@@ -161,6 +167,14 @@ html {
   -o-transition: 0.5s;
   transition: 0.5s;
 }
+#header #menu .sub-menu {
+  padding-left: 20px;
+}
+@media (min-width: 1261px) {
+  #header #menu .sub-menu {
+    display: none;
+  }
+}
 #header #menu a {
   display: block;
 }
@@ -168,6 +182,8 @@ html {
   #header #menu {
     display: inline-block;
     float: right;
+    position: relative;
+    right: -4px;
     -webkit-transform: rotateX(0);
     -moz-transform: rotateX(0);
     -ms-transform: rotateX(0);
@@ -176,7 +192,7 @@ html {
   }
   #header #menu li {
     display: inline-block;
-    margin-left: 49px;
+    margin-left: 43px;
   }
 }
 
@@ -267,7 +283,7 @@ html {
   }
 }
 
-body {
+body, .gm-style {
   font-family: "times regular", times, "HiraMinProN-W3", "LiSungPro", STSong, serif;
 }
 
@@ -281,8 +297,8 @@ p {
   font-size: 1.1em;
 }
 #header nav a {
-  font-size: 0.8em;
-  letter-spacing: 0.1em;
+  font-size: 0.85em;
+  letter-spacing: 0.15em;
 }
 
 #sidebar li {
@@ -301,8 +317,8 @@ p {
   letter-spacing: 0.1em;
 }
 #content h2, #content strong {
-  font-size: 1.2em;
-  letter-spacing: 0.3em;
+  font-size: 1.15em;
+  letter-spacing: 0.4em;
 }
 #content h2:before, #content strong:before {
   content: "";
@@ -386,8 +402,12 @@ p {
   font-weight: bold;
 }
 
+.page-info #map h4 {
+  font-weight: bold;
+}
+
 body.page-home {
-  background: url("images/wall-home.jpg") #efe7e4;
+  background: url("images/wall-home.jpg") #efe7e4 center;
   -webkit-background-size: 500px 500px;
   -moz-background-size: 500px 500px;
   -o-background-size: 500px 500px;
@@ -421,7 +441,7 @@ body.page-home #background {
   bottom: 0;
   right: 0;
   z-index: 100;
-  opacity: 0.5;
+  opacity: 1;
   pointer-events: none;
   background: url("images/bg-home.jpg");
   -webkit-background-size: 1440px 780px;
@@ -430,9 +450,12 @@ body.page-home #background {
   background-size: 1440px 780px;
   display: none;
 }
+body.page-home #background.debug {
+  display: block;
+}
 
 body.page-about {
-  background: url("images/wall-about.jpg") #b2bc8e;
+  background: url("images/wall-about.jpg") #b2bc8e center;
   -webkit-background-size: 200px 300px;
   -moz-background-size: 200px 300px;
   -o-background-size: 200px 300px;
@@ -442,13 +465,14 @@ body.page-about a.active, body.page-about a:hover {
   color: #b2bc8e;
 }
 body.page-about #content h2 {
-  max-width: 600px;
+  max-width: 460px;
   margin: 0 auto;
+  line-height: 65px;
   background: url("images/title-about-left.png") left center no-repeat, url("images/title-about-right.png") right center no-repeat;
-  -webkit-background-size: 25% auto;
-  -moz-background-size: 25% auto;
-  -o-background-size: 25% auto;
-  background-size: 25% auto;
+  -webkit-background-size: 21% auto;
+  -moz-background-size: 21% auto;
+  -o-background-size: 21% auto;
+  background-size: 21% auto;
 }
 body.page-about #sidebar li {
   background: url("images/side-hover-about-right.png") 90% center, url("images/side-hover-about-left.png") 10% center;
@@ -475,7 +499,7 @@ body.page-about #background {
   bottom: 0;
   right: 0;
   z-index: 100;
-  opacity: 0.5;
+  opacity: 1;
   pointer-events: none;
   background: url("images/bg-about.jpg");
   -webkit-background-size: 1440px 780px;
@@ -484,9 +508,12 @@ body.page-about #background {
   background-size: 1440px 780px;
   display: none;
 }
+body.page-about #background.debug {
+  display: block;
+}
 
 body.page-private-party {
-  background: url("images/wall-private-party.jpg") #ccb4d6;
+  background: url("images/wall-private-party.jpg") #ccb4d6 center;
   -webkit-background-size: 500px 692px;
   -moz-background-size: 500px 692px;
   -o-background-size: 500px 692px;
@@ -496,13 +523,14 @@ body.page-private-party a.active, body.page-private-party a:hover {
   color: #ccb4d6;
 }
 body.page-private-party #content h2 {
-  max-width: 600px;
+  max-width: 448px;
   margin: 0 auto;
+  line-height: 65px;
   background: url("images/title-private-party-left.png") left center no-repeat, url("images/title-private-party-right.png") right center no-repeat;
-  -webkit-background-size: 25% auto;
-  -moz-background-size: 25% auto;
-  -o-background-size: 25% auto;
-  background-size: 25% auto;
+  -webkit-background-size: 24% auto;
+  -moz-background-size: 24% auto;
+  -o-background-size: 24% auto;
+  background-size: 24% auto;
 }
 body.page-private-party #sidebar li {
   background: url("images/side-hover-private-party-right.png") 90% center, url("images/side-hover-private-party-left.png") 10% center;
@@ -529,7 +557,7 @@ body.page-private-party #background {
   bottom: 0;
   right: 0;
   z-index: 100;
-  opacity: 0.5;
+  opacity: 1;
   pointer-events: none;
   background: url("images/bg-private-party.jpg");
   -webkit-background-size: 1440px 780px;
@@ -538,9 +566,12 @@ body.page-private-party #background {
   background-size: 1440px 780px;
   display: none;
 }
+body.page-private-party #background.debug {
+  display: block;
+}
 
 body.page-info {
-  background: url("images/wall-info.jpg") #93a1a2;
+  background: url("images/wall-info.jpg") #93a1a2 center;
   -webkit-background-size: 200px 300px;
   -moz-background-size: 200px 300px;
   -o-background-size: 200px 300px;
@@ -550,13 +581,14 @@ body.page-info a.active, body.page-info a:hover {
   color: #93a1a2;
 }
 body.page-info #content h2 {
-  max-width: 600px;
+  max-width: 415px;
   margin: 0 auto;
+  line-height: 65px;
   background: url("images/title-info-left.png") left center no-repeat, url("images/title-info-right.png") right center no-repeat;
-  -webkit-background-size: 25% auto;
-  -moz-background-size: 25% auto;
-  -o-background-size: 25% auto;
-  background-size: 25% auto;
+  -webkit-background-size: 27% auto;
+  -moz-background-size: 27% auto;
+  -o-background-size: 27% auto;
+  background-size: 27% auto;
 }
 body.page-info #sidebar li {
   background: url("images/side-hover-info-right.png") 90% center, url("images/side-hover-info-left.png") 10% center;
@@ -583,7 +615,7 @@ body.page-info #background {
   bottom: 0;
   right: 0;
   z-index: 100;
-  opacity: 0.5;
+  opacity: 1;
   pointer-events: none;
   background: url("images/bg-info.jpg");
   -webkit-background-size: 1440px 780px;
@@ -592,9 +624,12 @@ body.page-info #background {
   background-size: 1440px 780px;
   display: none;
 }
+body.page-info #background.debug {
+  display: block;
+}
 
 body.page-news, body.category {
-  background: url("images/wall-news.jpg") #d6aea8;
+  background: url("images/wall-news.jpg") #d6aea8 center;
   -webkit-background-size: 200px 300px;
   -moz-background-size: 200px 300px;
   -o-background-size: 200px 300px;
@@ -604,13 +639,14 @@ body.page-news a.active, body.page-news a:hover, body.category a.active, body.ca
   color: #d6aea8;
 }
 body.page-news #content h2, body.category #content h2 {
-  max-width: 600px;
+  max-width: 480px;
   margin: 0 auto;
+  line-height: 65px;
   background: url("images/title-news-left.png") left center no-repeat, url("images/title-news-right.png") right center no-repeat;
-  -webkit-background-size: 25% auto;
-  -moz-background-size: 25% auto;
-  -o-background-size: 25% auto;
-  background-size: 25% auto;
+  -webkit-background-size: 26% auto;
+  -moz-background-size: 26% auto;
+  -o-background-size: 26% auto;
+  background-size: 26% auto;
 }
 body.page-news #sidebar li, body.category #sidebar li {
   background: url("images/side-hover-news-right.png") 90% center, url("images/side-hover-news-left.png") 10% center;
@@ -637,7 +673,7 @@ body.page-news #background, body.category #background {
   bottom: 0;
   right: 0;
   z-index: 100;
-  opacity: 0.5;
+  opacity: 1;
   pointer-events: none;
   background: url("images/bg-news.jpg");
   -webkit-background-size: 1440px 780px;
@@ -646,25 +682,29 @@ body.page-news #background, body.category #background {
   background-size: 1440px 780px;
   display: none;
 }
+body.page-news #background.debug, body.category #background.debug {
+  display: block;
+}
 
 body.page-food {
-  background: url("images/wall-food.jpg") #dac9a2;
-  -webkit-background-size: 239px 347px;
-  -moz-background-size: 239px 347px;
-  -o-background-size: 239px 347px;
-  background-size: 239px 347px;
+  background: url("images/wall-food.jpg") #dac9a2 center;
+  -webkit-background-size: 167.3px 242.9px;
+  -moz-background-size: 167.3px 242.9px;
+  -o-background-size: 167.3px 242.9px;
+  background-size: 167.3px 242.9px;
 }
 body.page-food a.active, body.page-food a:hover {
   color: #dac9a2;
 }
 body.page-food #content h2 {
-  max-width: 600px;
+  max-width: 490px;
   margin: 0 auto;
+  line-height: 65px;
   background: url("images/title-food-left.png") left center no-repeat, url("images/title-food-right.png") right center no-repeat;
-  -webkit-background-size: 25% auto;
-  -moz-background-size: 25% auto;
-  -o-background-size: 25% auto;
-  background-size: 25% auto;
+  -webkit-background-size: 28% auto;
+  -moz-background-size: 28% auto;
+  -o-background-size: 28% auto;
+  background-size: 28% auto;
 }
 body.page-food #sidebar li {
   background: url("images/side-hover-food-right.png") 90% center, url("images/side-hover-food-left.png") 10% center;
@@ -691,7 +731,7 @@ body.page-food #background {
   bottom: 0;
   right: 0;
   z-index: 100;
-  opacity: 0.5;
+  opacity: 1;
   pointer-events: none;
   background: url("images/bg-food.jpg");
   -webkit-background-size: 1440px 780px;
@@ -699,6 +739,9 @@ body.page-food #background {
   -o-background-size: 1440px 780px;
   background-size: 1440px 780px;
   display: none;
+}
+body.page-food #background.debug {
+  display: block;
 }
 
 body {
@@ -1213,6 +1256,11 @@ a {
   width: 12px;
   margin: -5px auto 5px;
 }
+@media (max-width: 600px) {
+  .page-food #dinner .article-title {
+    letter-spacing: 0;
+  }
+}
 .page-food .meterials-list {
   margin-bottom: 80px;
 }
@@ -1252,6 +1300,9 @@ a {
 .page-food #sidebar ul {
   margin-top: 8px;
 }
+.page-food #sidebar .li-dinner {
+  letter-spacing: 0.1em;
+}
 @media (min-width: 601px) {
   .page-food #sidebar .cover {
     width: 93%;
@@ -1259,6 +1310,9 @@ a {
 }
 .page-food .meterials-list li:last-child br {
   display: block;
+}
+.page-food #content .post {
+  margin-top: 1em;
 }
 
 .page-private-party #sidebar ul {
@@ -1280,6 +1334,12 @@ a {
 .page-private-party #price h3 {
   font-size: 1em;
 }
+.page-private-party #content .symbol-rule {
+  width: 20px;
+}
+.page-private-party #content .symbol-options {
+  width: 55px;
+}
 .page-private-party #content #rule p {
   display: inline;
 }
@@ -1292,7 +1352,7 @@ a {
   display: block;
 }
 
-#informations .brading-info {
+#informations .branding-info {
   margin-bottom: 25px;
 }
 #informations p {
@@ -1301,6 +1361,9 @@ a {
 
 .page-news h2 + img {
   margin: 10px auto !important;
+}
+.page-news .symbol-preferential {
+  width: 40px;
 }
 
 .page-news img, .page-about img, .page-food img {
@@ -1378,7 +1441,7 @@ a {
 #menu a {
   border-bottom: 1px dotted #826441;
   padding-left: 13px;
-  background: url("images/menu-key.png") left 15px no-repeat;
+  background: url("images/menu-key.png") left 16px no-repeat;
   -webkit-background-size: 6px 12px;
   -moz-background-size: 6px 12px;
   -o-background-size: 6px 12px;

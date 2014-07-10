@@ -2,16 +2,20 @@
   xx = (t) ->
     console.log(t)
 
-  $window    = $(window)
-  $body      = $('body')
-  $header    = $('#header')
-  $content   = $('#content')
-  $articles  = $content.find('> article')
-  $sidebar   = $('#sidebar')
-  $menuItems = $sidebar.find('li')
-  $maps      = $('.acf-map')
-  $frames    = $('.frames')
-  $images    = $('img')
+  $window      = $(window)
+  $html        = $('html')
+  $body        = $('body')
+  $header      = $('#header')
+  $mainMenu    = $header.find('#menu-main-menu')
+  $subMenu     = $header.find('.sub-menu')
+  $menuToggler = $header.find('#menu-toggler')
+  $content     = $('#content')
+  $articles    = $content.find('> article')
+  $sidebar     = $('#sidebar')
+  $menuItems   = $sidebar.find('li')
+  $maps        = $('.acf-map')
+  $frames      = $('.frames')
+  $images      = $('img')
 
   height   = 0
   width    = 0
@@ -22,10 +26,26 @@
 
   map_style = [
       "stylers": [
-        { "saturation": -33 }
-        { "hue": "#00aadd" }
-        { "lightness": -3 }
-        { "gamma": 0.8 }
+        { "hue": "#00c3ff" }
+        { "lightness": -4 }
+        { "gamma": 0.89 }
+      ]
+    ,
+      "featureType": "road"
+      "elementType": "geometry.stroke"
+      "stylers": [
+        { "visibility": "off" }
+      ]
+    ,
+      "featureType": "road"
+      "elementType": "geometry"
+      "stylers": [
+        { "saturation": -81 }
+      ]
+    ,
+      "featureType": "water"
+      "stylers": [
+        { "saturation": -70 }
       ]
   ]
 
@@ -33,11 +53,20 @@
 
   headerIn = -> $header.addClass 'active'
 
+  openMenu = ->
+    isOpen = $(@).is(':checked')
+    $html.toggleClass('menu-open')
+    $mainMenu.height( height - 100 )
+
   changeBackground = (e) ->
     id = $(e.currentTarget).attr('id').replace('frame-', '')
     for page in pages
       $body.removeClass("page-#{page}")
     $body.addClass("page-#{id}")
+
+  debug = (e) ->
+    return unless e.which == 192
+    $('#background').toggleClass('debug')
 
   ############################################
   # Map
@@ -120,6 +149,11 @@
   $content.on 'scroll', scrollSpy
   $frames.on 'mouseover', 'a', changeBackground
   $images.on 'dragstart', (e) -> e.preventDefault()
+  $window.on 'keydown', debug
+  $menuToggler.on 'change', openMenu
+  $subMenu.on 'click', 'a', -> $menuToggler.trigger('click')
+
+
 
   ############################################
   # Init

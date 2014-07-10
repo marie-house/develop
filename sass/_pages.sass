@@ -121,6 +121,10 @@ $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
     h2 + .symbol
       width: 12px
       margin: -5px auto 5px
+  #dinner
+    .article-title
+      +mb
+        letter-spacing: 0
   .meterials-list
     margin-bottom: 80px
     sub
@@ -151,12 +155,17 @@ $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
   #sidebar
     ul
       margin-top: 8px
+    .li-dinner
+      letter-spacing: 0.1em
     +ns
       .cover
         width: 93%
   .meterials-list li:last-child
     br
       display: block
+  #content
+    .post
+      margin-top: 1em
 
 .page-private-party
   #sidebar
@@ -174,6 +183,10 @@ $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
     h3
       font-size: 1em
   #content
+    .symbol-rule
+      width: 20px
+    .symbol-options
+      width: 55px
     #rule
       p
         display: inline
@@ -183,7 +196,7 @@ $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
       display: block
 
 #informations
-  .brading-info
+  .branding-info
     margin-bottom: 25px
   p
     display: block
@@ -191,6 +204,8 @@ $frames  : $a, $b, $c, $d, $e, $home, $about, $news, $food, $info, $private
 .page-news
   h2 + img
     margin: 10px auto !important
+  .symbol-preferential
+    width: 40px
 
 .page-news, .page-about, .page-food
   img
