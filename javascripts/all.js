@@ -72,11 +72,16 @@
       return $mainMenu.height(height - 100);
     };
     openSubmenu = function(e) {
+      var $tab;
       if (isDesktop) {
         return;
       }
+      $tab = $(e.currentTarget);
+      if (!($tab.attr('href').indexOf('booking') < 0)) {
+        return;
+      }
       e.preventDefault();
-      return $(e.currentTarget).next().slideToggle();
+      return $tab.next().slideToggle();
     };
     changeBackground = function(e) {
       var id, page, _i, _len;
@@ -93,6 +98,7 @@
       }
       return $('#background').toggleClass('debug');
     };
+    $mainMenu.find("a[href*='booking']").attr('target', '_blank');
     render_map = function($el) {
       var $markers, args, map;
       $markers = $el.find('.marker');
@@ -148,7 +154,7 @@
       height = $window.height();
       width = $window.width();
       isMobile = width < 600;
-      isDesktop = width > 1259;
+      isDesktop = width > 1070;
       contentHeight = isMobile ? 'auto' : height - 280;
       if (contentHeight < sidebarHeight - 40) {
         contentHeight = sidebarHeight - 40;

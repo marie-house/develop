@@ -61,8 +61,10 @@
 
   openSubmenu = (e) ->
     return if isDesktop
+    $tab = $(e.currentTarget)
+    return unless $tab.attr('href').indexOf('booking') < 0
     e.preventDefault()
-    $(e.currentTarget).next().slideToggle()
+    $tab.next().slideToggle()
 
   changeBackground = (e) ->
     id = $(e.currentTarget).attr('id').replace('frame-', '')
@@ -73,6 +75,8 @@
   debug = (e) ->
     return unless e.which == 192
     $('#background').toggleClass('debug')
+
+  $mainMenu.find("a[href*='booking']").attr('target', '_blank')
 
   ############################################
   # Map
@@ -131,7 +135,7 @@
     height = $window.height()
     width  = $window.width()
     isMobile = width < 600
-    isDesktop = width > 1259
+    isDesktop = width > 1070
     contentHeight = if isMobile then 'auto' else height - 280
     contentHeight = sidebarHeight - 40 if contentHeight < sidebarHeight - 40
     $content.css 'height', contentHeight
@@ -160,8 +164,6 @@
   $menuToggler.on 'change', openMenu
   $subMenu.on 'click', 'a', -> $menuToggler.trigger('click')
   $mainMenu.on 'click', '> li > a', (e) -> openSubmenu(e)
-
-
 
   ############################################
   # Init

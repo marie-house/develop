@@ -151,7 +151,7 @@ html.menu-open {
   line-height: 21px;
   margin-top: 6px;
 }
-@media (min-width: 931px) {
+@media (min-width: 1071px) {
   #header #menu-label {
     display: none;
   }
@@ -173,7 +173,7 @@ html.menu-open {
 #header #menu-toggler:checked ~ #menu #menu-main-menu {
   overflow: auto;
 }
-@media (min-width: 931px) {
+@media (min-width: 1071px) {
   #header #menu-toggler:checked ~ #menu {
     margin-top: 0;
     height: auto;
@@ -195,7 +195,7 @@ html.menu-open {
   padding-left: 20px;
   display: none;
 }
-@media (min-width: 931px) {
+@media (min-width: 1071px) {
   #header #menu .sub-menu {
     display: none;
   }
@@ -203,7 +203,7 @@ html.menu-open {
 #header #menu a {
   display: block;
 }
-@media (min-width: 931px) {
+@media (min-width: 1071px) {
   #header #menu {
     display: inline-block;
     position: absolute;
