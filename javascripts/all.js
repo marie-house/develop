@@ -1,7 +1,7 @@
 (function() {
 
   (function($) {
-    var $articles, $body, $content, $frames, $header, $html, $images, $mainMenu, $maps, $menuItems, $menuToggler, $sidebar, $subMenu, $window, add_marker, center_map, changeBackground, changeHeight, contentHeight, debug, headerIn, height, isMobile, map_style, openMenu, pages, render_map, scrollSpy, sidebarHeight, width, xx;
+    var $articles, $body, $content, $frames, $header, $html, $images, $mainMenu, $maps, $menuItems, $menuToggler, $sidebar, $subMenu, $window, add_marker, center_map, changeBackground, changeHeight, contentHeight, debug, headerIn, height, isDesktop, isMobile, map_style, openMenu, openSubmenu, pages, render_map, scrollSpy, sidebarHeight, width, xx;
     xx = function(t) {
       return console.log(t);
     };
@@ -22,6 +22,7 @@
     height = 0;
     width = 0;
     isMobile = false;
+    isDesktop = false;
     sidebarHeight = $sidebar.height();
     contentHeight = 0;
     map_style = [
@@ -69,6 +70,13 @@
       isOpen = $(this).is(':checked');
       $html.toggleClass('menu-open');
       return $mainMenu.height(height - 100);
+    };
+    openSubmenu = function(e) {
+      if (isDesktop) {
+        return;
+      }
+      e.preventDefault();
+      return $(e.currentTarget).next().slideToggle();
     };
     changeBackground = function(e) {
       var id, page, _i, _len;
@@ -140,6 +148,7 @@
       height = $window.height();
       width = $window.width();
       isMobile = width < 600;
+      isDesktop = width > 1259;
       contentHeight = isMobile ? 'auto' : height - 280;
       if (contentHeight < sidebarHeight - 40) {
         contentHeight = sidebarHeight - 40;
@@ -167,6 +176,9 @@
     $menuToggler.on('change', openMenu);
     $subMenu.on('click', 'a', function() {
       return $menuToggler.trigger('click');
+    });
+    $mainMenu.on('click', '> li > a', function(e) {
+      return openSubmenu(e);
     });
     $window.resize();
     scrollSpy();

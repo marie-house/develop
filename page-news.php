@@ -12,10 +12,11 @@
     <?php while (have_posts()) : the_post(); ?>
     <div class="post" id="post-<?php the_ID(); ?>">
       <span class="entry-date"><?php the_time( get_option( 'date_format' ) ); ?></span>
-      <h3>『<?php the_title(); ?>』</h3>
+      <h3><a href="<?php echo get_permalink() ?>">『<?php the_title(); ?>』</a></h3>
       <div class="entry">
         <?php the_content('Read more &raquo;'); ?>
       </div>
+      <div class="fb-share-button" data-href="<?php echo get_permalink() ?>"></div>
     </div>
     <?php endwhile; ?>
   </article>

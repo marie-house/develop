@@ -20,6 +20,7 @@
   height   = 0
   width    = 0
   isMobile = false
+  isDesktop = false
 
   sidebarHeight = $sidebar.height()
   contentHeight = 0
@@ -57,6 +58,11 @@
     isOpen = $(@).is(':checked')
     $html.toggleClass('menu-open')
     $mainMenu.height( height - 100 )
+
+  openSubmenu = (e) ->
+    return if isDesktop
+    e.preventDefault()
+    $(e.currentTarget).next().slideToggle()
 
   changeBackground = (e) ->
     id = $(e.currentTarget).attr('id').replace('frame-', '')
@@ -125,6 +131,7 @@
     height = $window.height()
     width  = $window.width()
     isMobile = width < 600
+    isDesktop = width > 1259
     contentHeight = if isMobile then 'auto' else height - 280
     contentHeight = sidebarHeight - 40 if contentHeight < sidebarHeight - 40
     $content.css 'height', contentHeight
@@ -152,6 +159,7 @@
   $window.on 'keydown', debug
   $menuToggler.on 'change', openMenu
   $subMenu.on 'click', 'a', -> $menuToggler.trigger('click')
+  $mainMenu.on 'click', '> li > a', (e) -> openSubmenu(e)
 
 
 

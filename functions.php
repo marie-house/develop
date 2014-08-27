@@ -71,6 +71,10 @@ function add_slug_body_class( $classes ) {
   global $post;
   if ( isset( $post ) ) {
     $classes[] = $post->post_type . '-' . $post->post_name;
+    $categories = get_the_category($post->ID);
+    for ($i=0; $i < count($categories); $i++) {
+      $classes[] = 'page-' . $categories[$i]->name;
+    }
   }
   return $classes;
 }

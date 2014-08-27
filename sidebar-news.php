@@ -13,7 +13,7 @@
     foreach($categories as $category):?>
       <li>
         <!-- <a href="<?php echo get_category_link( $category->term_id ) ?>"><?php echo $category->name ?></a> -->
-        <a href="#<?php echo $category->slug ?>"><?php echo $category->name ?></a>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>/news/#<?php echo $category->slug ?>"><?php echo $category->name ?></a>
       </li>
   <?php endforeach ?>
 </ul>

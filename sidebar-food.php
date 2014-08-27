@@ -15,7 +15,8 @@
     foreach($categories as $category): ?>
     <?php query_posts( array ( 'category_name' => $category->slug ) ); ?>
     <li class="li-<?php echo $category->slug ?>">
-      <a href="#<?php echo $category->slug ?>"><?php single_cat_title(); ?></a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>food/#<?php echo $category->slug ?>"><?php single_cat_title(); ?></a>
+
     </li>
   <?php endforeach ?>
 </ul>

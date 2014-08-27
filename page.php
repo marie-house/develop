@@ -43,8 +43,10 @@ endif;
         $cover        = get_sub_field('cover');
         $name         = get_sub_field('name');
         $english_name = get_sub_field('english_name');
+        $class = explode('book-', $cover['url']);
+        $class = explode('.', $class[1]);
       ?>
-        <li>
+        <li class="<?php echo $class[0] ?>">
           <img src="<?php echo $cover['url'] ?>" alt="<?php echo $name ?>">
           <a href="<?php echo $link ?>" target="_blank">
             <span class="name"><?php echo $name ?></span>
