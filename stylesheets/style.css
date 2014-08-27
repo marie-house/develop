@@ -437,7 +437,7 @@ p {
   font-weight: bold;
 }
 .page-info .mh .eng-name {
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
 }
 .page-info .toffee .eng-name {
   letter-spacing: 0.1em;
@@ -819,13 +819,6 @@ a {
   content: "";
   display: table;
   clear: both;
-}
-
-.page-info .brading-info {
-  margin: 10px 0;
-}
-.page-info .symbol-info-2 {
-  margin: 10px 0;
 }
 
 .page-home .frames {
@@ -1215,6 +1208,12 @@ a {
     padding-bottom: 40px;
   }
 }
+.page-info .brading-info {
+  margin: 10px 0;
+}
+.page-info .symbol-info-2 {
+  margin: 10px 0;
+}
 .page-info #sidebar ul {
   margin-top: 50px;
 }
@@ -1266,7 +1265,7 @@ a {
   display: inline-block;
   background: url("images/group-item.png") 0 0 no-repeat;
   line-height: 1.2em;
-  padding-top: 20px;
+  padding-top: 15px;
   width: 220px;
   height: 64.10112px;
   letter-spacing: 0.2em;
@@ -1285,6 +1284,11 @@ a {
 .page-info #group li .eng-name {
   display: block;
   font-size: 0.8em;
+}
+.page-info #group li .eng-name:after {
+  content: "Facebook";
+  display: block;
+  margin-top: -3px;
 }
 
 .page-food #features {
